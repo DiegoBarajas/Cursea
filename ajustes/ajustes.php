@@ -79,7 +79,7 @@
                         echo '
                             <nav class="nav-user">
                                 <a href="ajustes.php" class="nav-user">
-                                    <img src="../img/user-menu.png" alt="user" class="img-navbar-user img-here">
+                                    <img src="/general/imagen_usuario.php" alt="user" class="img-navbar-user">
                                 </a>
                             </nav>
                         ';

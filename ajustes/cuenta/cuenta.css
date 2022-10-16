@@ -142,8 +142,26 @@ pre{
 }
 
 .btn {
+    width: max-content;
     font-family: Helvetica;
     font-size: 3vh;
+}
+
+.btn:hover{
+    animation-name: btn;
+    animation-duration: 200ms;
+    font-size: 3.2vh;
+    color: rgb(88, 88, 88);
+}
+
+@keyframes btn {
+    from{
+        color: white;
+        font-size: 3vh;
+    }to{
+        color: rgb(88, 88, 88);
+        font-size: 3.2vh;
+    }
 }
 
 

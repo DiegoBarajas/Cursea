@@ -98,7 +98,7 @@
                         echo '
                             <nav class="nav-user">
                                 <a href="../ajustes.php" class="nav-user">
-                                    <img src="../../img/user-menu.png" alt="user" class="img-navbar-user">
+                                    <img src="/general/imagen_usuario.php" alt="user" class="img-navbar-user">
                                 </a>
                             </nav>
                         ';
@@ -119,8 +119,8 @@
             <section class="sect-contenido">
                 <article class="art">
                     <label class="lab subtitulo"><b>Foto de perfil: </b></label>
-                    <img src="../../img/icono.png" alt="Imagen de Usuario" class="img-perfil">
-                    <button class="btn">Cambiar Imagen</button>
+                    <img src="/general/imagen_usuario.php" alt="Imagen de Usuario" class="img-perfil">
+                    <button class="btn" onclick="window.location.href = 'cambiar_img/cambiar_img.php';">Cambiar Imagen</button>
                 </article>
                 <article class="art">
                     <lab class="lab subtitulo"><b>Nombre: </b></lab>
