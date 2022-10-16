@@ -1,0 +1,150 @@
+:root {
+    --morado-1: #9688C8;
+    --morado-2: #6C5AA9;
+    --morado-3: #4F3C91;
+    --morado-4: #39267D;
+    --morado-5: #251363;
+    --rosa-1: #E894A8;
+    --rosa-2: #C15A72;
+    --rosa-3: #9C314A;
+    --rosa-4: #77122A;
+    --rosa-5: #500013;
+    --verde-1: #82CCA2;
+    --verde-2: #52AF7A;
+    --verde-3: #33965E;
+    --verde-4: #188148;
+    --verde-5: #096631;
+    --amarillo-1: #FFF0A9;
+    --amarillo-2: #F7E17B;
+    --amarillo-3: #D3BB4B;
+    --amarillo-4: #B59D2A;
+    --amarillo-5: #90790F;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    width: 100%;
+    height: 92.5vh;
+    float: left;
+    margin-top: 7.5vh;
+}
+
+.art-titulo {
+    width: 100%;
+    height: 20vh;
+    float: left;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.h1-titulo{
+    font-size: 9vh;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.art-ajustes {
+    width: 100%;
+    height: 71.5vh;
+    float: left;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.art-datos{
+    width: 100%;
+    height: 20%;
+    float: left;
+    cursor: pointer;
+}
+
+.art-datos:hover{
+    animation-name: art-datos;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+
+    transform: translateY(-2vh);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+@keyframes art-datos {
+    0% { transform: translateY(0vh); }
+    40% { transform: translateY(-3vh); }
+    85% { transform: translateY(-2vh); }
+}
+
+.art-datos:not(:hover){
+    animation-name: not-art-datos;
+    animation-duration: 200ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes not-art-datos {
+    from{ 
+        transform: translateY(-2vh); 
+    }to{ 
+        transform: translateY(0vh); 
+    }
+}
+
+.sect-icono {
+    width: 10%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.sect-datos {
+    width: 80%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.sect-flecha {
+    width: 10%;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img-icono {
+    height: 65%;
+    margin-right: 2vh;
+}
+
+.h3-nombre-dato {
+    font-size: 3vh;
+    margin-left: 2vh;
+}
+
+.p-desc-dato {
+    font-size: 2vh;
+    margin-top: 1vh;
+    margin-left: 2vh;
+}
+
+.img-flecha {
+    height: 30%;
+    opacity: .5;
+}

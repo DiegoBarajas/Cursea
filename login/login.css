@@ -1,0 +1,284 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    background-color: black;
+    background-image: url(../img/fondo-login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+h2 {
+    font-family: 'Prompt', sans-serif;
+}
+
+h3{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+p{
+    font-family: Helvetica;
+}
+
+input {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.btn-back{
+    left: 2vh;
+    top: 2vh;
+    position: absolute;
+    width: 10vh;
+    font-size: 2.5vh;
+    height: 3.5vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0px;
+    border-radius: .75vh;
+    cursor: pointer;
+}
+
+.btn-back:hover{
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.75);
+    animation-name: btn-back-hover;
+    animation-timing-function: ease-in;
+    animation-duration: 200ms;
+    font-size: 2.75vh;
+}
+
+.btn-back:not(:hover){
+    animation-name: btn-back-not-hover;
+    animation-timing-function: ease-in;
+    animation-duration: 200ms;
+}
+
+@keyframes btn-back-hover{
+    from{
+        font-size: 2.5vh;
+        background-color: rgba(255, 255, 255, 0.5);
+    }to{
+        font-size: 2.75vh;
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+}
+
+@keyframes btn-back-not-hover{
+    from{
+        font-size: 2.75vh;
+        background-color: rgba(255, 255, 255, 0.75);
+    }to{
+        font-size: 2.5vh;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.contenedor__todo{
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.caja__trasera{
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.caja__trasera div{
+    margin: 100px 40px;
+    color: black;
+    transition: all 500ms;
+}
+
+
+.caja__trasera div p,
+.caja__trasera button{
+    margin-top: 30px;
+}
+
+.caja__trasera div h3{
+    font-weight: 400;
+    font-size: 26px;
+}
+
+.caja__trasera div p{
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.caja__trasera button{
+    padding: 10px 40px;
+    border: 2px solid #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    transition: all 300ms;
+}
+
+.caja__trasera button:hover{
+    background: #fff;
+    color: #4f4f50;
+}
+
+/*Formularios*/
+
+.contenedor__login-register{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 380px;
+    position: relative;
+    top: -185px;
+    left: 10px;
+
+    /*La transicion va despues del codigo JS*/
+    transition: left 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
+}
+
+.contenedor__login-register section{
+    width: 100%;
+    padding: 80px 20px;
+    background: white;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.contenedor__login-register section form h2{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0b0b0c;
+}
+
+.contenedor__login-register section form input{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background: #F2F2F2;
+    font-size: 16px;
+    outline: none;
+}
+.Mensaje_de_ERROR{
+    font-size: 2.5vh;
+    color: red;
+    text-align: center;
+}
+
+.contenedor__login-register section form button{
+    padding: 10px 40px;
+    margin-top: 40px;
+    border: none;
+    font-size: 14px;
+    background: #030303;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    outline: none;
+}
+
+.formulario__login{
+    opacity: 1;
+    display: block;
+}
+
+.formulario__register{
+    display: none;
+}
+
+.btn{
+    width: 35vh;
+    height: 8.5vh;
+    font-size: 3vh;
+    display: block;
+    margin: auto;
+    margin-top: 4vh;
+    cursor: pointer;
+    border: solid .5vh transparent;
+    background: linear-gradient(#fff, #fff) no-repeat, linear-gradient(to left, rgb(37, 37, 37) 12vh, #cea87c00 12vh, #cea87c00 22vh, rgb(37, 37, 37) 22vh);
+}
+
+.btn:hover{
+    background: linear-gradient(rgb(209, 209, 209), rgb(209, 209, 209)) no-repeat, linear-gradient(to left, rgb(37, 37, 37) 0%, #cea87c00 0%, #cea87c00 0%, rgb(37, 37, 37) 0%);
+    animation-name: btn-hover;
+    animation-duration: 300ms;
+    animation-timing-function: ease-out;
+    font-size: 3.5vh;
+}
+
+.btn:not(:hover){
+    animation-name: btn-not;
+    animation-duration: 350ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes btn-hover{
+    from{
+        font-size: 3vh;
+    }to{
+        font-size: 3.5vh;
+    }
+}
+
+@keyframes btn-not{
+    from{
+        font-size: 3.5vh;
+    }to{
+        font-size: 3vh;
+    }
+}
+
+@media screen and (max-width: 850px){
+
+    main{
+        margin-top: 50px;
+    }
+
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin: 0px;
+        position: absolute;
+    }
+
+
+    /*Formularios*/
+
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
+    }
+}

@@ -1,0 +1,266 @@
+:root {
+    --morado-1: #9688C8;
+    --morado-2: #6C5AA9;
+    --morado-3: #4F3C91;
+    --morado-4: #39267D;
+    --morado-5: #251363;
+    --rosa-1: #E894A8;
+    --rosa-2: #C15A72;
+    --rosa-3: #9C314A;
+    --rosa-4: #77122A;
+    --rosa-5: #500013;
+    --verde-1: #82CCA2;
+    --verde-2: #52AF7A;
+    --verde-3: #33965E;
+    --verde-4: #188148;
+    --verde-5: #096631;
+    --amarillo-1: #FFF0A9;
+    --amarillo-2: #F7E17B;
+    --amarillo-3: #D3BB4B;
+    --amarillo-4: #B59D2A;
+    --amarillo-5: #90790F;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    float: left;
+    height: min-content;
+    margin-top: 7.5vh;
+}
+
+.art-info{
+    width: 100%;
+    height: 60vh;
+    float: left;
+}
+
+.sect-info{
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.sect-tipo{
+    width: 100%;
+    height: 5%;
+    float: left;
+    display: flex;
+    align-items: flex-end;
+}
+
+.p-tipo{
+    font-size: 2vh;
+    margin-left: 2vh;
+}
+
+.sect-nombre{
+    width: 100%;
+    height: 15%;
+    float: left;
+}
+
+.h1-nombre{
+    font-size: 8vh;
+    margin-left: 1vh;
+}
+
+.sect-categoria{
+    width: 100%;
+    height: 5%;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.a-categoria{
+    font-size: 2vh;
+    margin-left: 2vh;
+    color: var(--morado-4);
+}
+
+.sect-desc{
+    width: 100%;
+    height: 75%;
+    float: left;
+    display: flex;
+}
+
+.p-descripcion {
+    margin-top: 1vh;
+    font-size: 2vh;
+    margin-left: 2.5vh;
+    margin-right: 2.5vh;
+}
+
+.sect-img{
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.img {
+    width: 90%;
+    margin-left: 3vh;
+}
+
+.art-temas{
+    width: 55%;
+    height: fit-content;
+    min-height: 32.5vh;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+.sect-temas {
+    width: 95%;
+    min-height: 20vh;
+    height: fit-content;
+    border-radius: 2vh;
+    background-color: rgb(0, 17, 255);
+}
+
+.sect-contenido-p {
+    width: 100%;
+    height: 5vh;
+    float: left;    
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sect-contenido-padre{
+    width: 100%;
+    height: fit-content;
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sect-contenido {
+    width: 95%;
+    height: 10vh;
+    margin-bottom: .2vh;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: rgb(70, 70, 70);
+}
+
+.img-contenido{
+    height: 50%;
+    margin-left: 4vh;
+    margin-right: 4vh;
+}
+
+.h4-info-curso{
+    font-size: 3vh;
+}
+
+.art-duracion{
+    width: 45%;
+    height: 32.5vh;
+    float: right;
+}
+
+.h3-contenido{
+    font-size: 3vh;
+    margin-left: 3vh;
+}
+
+.sect-blanco{
+    width: 100%;
+    height: 3vh;
+    float: left;
+}
+
+.sect-duracion{
+    width: 100%;
+    height: 30%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sect-btns{
+    width: 100%;
+    height: 70%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.h2-duracion{
+    font-size: 5vh;
+}
+
+.btn-fav{
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--verde-2);
+    margin-right: 2vh;
+    border: 0px;
+
+    border-radius: 2.5vh;
+    cursor: pointer;
+}
+
+.btn-start{
+    width: 40vh;
+    height: 10vh;
+    background-color: var(--verde-2);
+    font-size: 3.5vh;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    border-radius: 2.5vh;
+    cursor: pointer;
+}
+
+.img-fav{
+    height: 60%;
+}
+
+.img-start{
+    height: 50%;
+    margin-right: 2vh;
+}
+
+.btn:hover{
+    animation-name: btn;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    background-color: var(--verde-5);
+
+}
+
+@keyframes btn {
+    25% { background-color: var(--verde-4); }
+    50% {  background-color: var(--verde-5)  }
+    75% {  background-color: var(--verde-4);  }
+    100% {  background-color: var(--verde-5);  }
+}

@@ -1,0 +1,520 @@
+:root {
+    --morado-1: #9688C8;
+    --morado-2: #6C5AA9;
+    --morado-3: #4F3C91;
+    --morado-4: #39267D;
+    --morado-5: #251363;
+    --rosa-1: #E894A8;
+    --rosa-2: #C15A72;
+    --rosa-3: #9C314A;
+    --rosa-4: #77122A;
+    --rosa-5: #500013;
+    --verde-1: #82CCA2;
+    --verde-2: #52AF7A;
+    --verde-3: #33965E;
+    --verde-4: #188148;
+    --verde-5: #096631;
+    --amarillo-1: #FFF0A9;
+    --amarillo-2: #F7E17B;
+    --amarillo-3: #D3BB4B;
+    --amarillo-4: #B59D2A;
+    --amarillo-5: #90790F;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    height: 250vh;
+    float: left;
+    margin-top: 7.5vh;
+}
+
+img {
+    max-height: 95%;
+}
+
+.sect-spa2{
+    width: 100%;
+    height: 1%;
+    float: left;
+}
+
+.sect-1{
+    width: 100%;
+    height: 25%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sect-bienvenida {
+    width: 100%;
+    height: 10vh;
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.h1-bienvenida {
+    font-size: 7vh;
+    margin-left: 5%;
+}
+
+.sect-mas-vistos {
+    width: 90%;
+    height: 77%;
+    background-color: var(--verde-5);
+    border-radius: 1vw;
+}
+
+.art-mas-vistos {
+    width: 100%;
+    height: 15%;
+    float: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.h3-mas-vistos {
+    font-size: 4vh;
+    margin-left: 4vh;
+}
+
+.art-curso{
+    width: 100%;
+    height: 70%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sect-curso-mas-visto {
+    width: 30%;
+    height: 100%;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.sect-curso-mas-visto:hover {
+    animation-name: sect-curso-mas-visto;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    transform: translateY(-1.5vh);
+}
+
+@keyframes sect-curso-mas-visto {
+    from{
+        transform: translateY(0vh);
+    }to{
+        transform: translateY(-1.5vh);
+    }
+}
+
+.sect-curso-mas-visto:not(:hover) {
+    animation-name: not-sect-curso-mas-visto;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes not-sect-curso-mas-visto {
+    from{
+        transform: translateY(-1.5vh);
+    }to{
+        transform: translateY(0vh);
+    }
+}
+
+.sect-img-mas-visto {
+    width: 100%;
+    height: 80%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-mas-visto {
+    margin-top: 1vh;
+    width: 90%;
+}
+
+.sect-p-mas-visto {
+    width: 100%;
+    height: 20%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.p-mas-visto {
+    margin-top: 1vh;
+    font-size: 3vh;
+}
+
+.art-puntitos {
+    width: 100%;
+    height: 15%;
+    float: left;
+}
+
+.sect-2 {
+    width: 100%;
+    height: 50%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.curso {
+    width: 90%;
+    height: 90%;
+    background-color: var(--verde-5);
+    border-radius: 1vw;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sect-nombre-curso{
+    width: 100%;
+    height: 10vh;
+    float: left;
+    display: flex;
+    align-items: flex-end;
+}
+
+.h2-nombre-curso{
+    font-size: 5vh;
+    margin-top: 7vh;
+    margin-left: 5%;
+    margin-bottom: 3vh;
+}
+
+.sect-curso {
+    width: 90%;
+    height: 29%;
+    background-color: var(--morado-3);
+    border-radius: 1vw;
+    margin-bottom: 1vw;
+    cursor: pointer;
+}
+
+.sect-curso:hover {
+    width: 93%;
+    height: 31%;
+    animation-name: sect-curso;
+    animation-duration: 250ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes sect-curso {
+    from{
+        width: 90%;
+        height: 29%;
+    }to{
+        width: 93%;
+        height: 31%;
+    }
+}
+
+.sect-curso:not(:hover) {
+    animation-name: not-sect-curso;
+    animation-duration: 200ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes not-sect-curso {
+    from{
+        width: 93%;
+        height: 31%;
+    }to{
+        width: 90%;
+        height: 29%;
+    }
+}
+
+.sect-curso-img {
+    width: 33%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-curso-1 {
+    width: 95%;
+}
+
+.sect-curso-nombre {
+    width: 67%;
+    height: 20%;
+    float: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end
+}
+
+.h2-curso-nombre {
+    font-size: 4vh;
+    margin-left: 1vh;
+}
+
+.sect-curso-descripcion {
+    width: 67%;
+    height: 60%;
+    float: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.p-descripcion {
+    font-size: 2.5vh;
+    margin-left: 1vh;
+    margin-right: 2vh;
+    margin-top: 1vh;
+}
+
+.sect-curso-duracion {
+    width: 67%;
+    height: 20%;
+    float: left;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center
+}
+
+.p-duracion {
+    font-size: 3.5vh;
+    margin-right: 4vh;
+}
+
+.sect-3 {
+    width: 100%;
+    height: 24%;
+    float: left;
+}
+
+.sect-categorias {
+    width: 100%;
+    height: 20%;
+    float: left;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.h2-categorias {
+    font-size: 5vh;
+    margin-left: 4%;
+    margin-top: 1.5vh;
+}
+
+.sect-cate-cuadritos {
+    width: 100%;
+    height: 80%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.art-cuadrito {
+    width: 18%;
+    height: 70%;
+    margin-left: .5vh;
+    margin-right: .5vh;
+    background-color: var(--rosa-3);
+    border-radius: 2vh;    
+    cursor: pointer;
+}
+
+.art-cuadrito:hover {
+    animation-name: art-cuadrito;
+    transform: translateY(-2vh);
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes art-cuadrito {
+    from{
+        transform: translateY(0vh);
+    }to{
+        transform: translateY(-2vh);
+    }
+}
+
+.art-cuadrito:not(:hover) {
+    animation-name: not-art-cuadrito;
+    animation-duration: 250ms;
+    animation-timing-function: ease-in-out;
+    cursor: pointer;
+}
+
+@keyframes not-art-cuadrito {
+    from{
+        transform: translateY(-2vh);
+    }to{
+        transform: translateY(0vh);
+    }
+}
+
+.sect-img-curso {
+    width: 100%;
+    height: 80%;
+    float: left;
+}
+
+.img-curso {
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+
+.sect-lab-curso {
+    width: 100%;
+    height: 20%;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+.lab-nombre-curso {
+    text-align: center;
+    font-size: 3vh;
+}
+
+aside{
+    width: 100%;
+    height: 55vh;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.anuncio {
+    width: 75%;
+    height: 95%;
+    background-color: #90790F;
+    border-radius: 3.5vh;
+}
+
+.anuncio-1{
+    width: 100%;
+    height: 30%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.anuncio-2{
+    width: 100%;
+    height: 40%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.anuncio-3{
+    width: 100%;
+    height: 30%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.h1-anuncio {
+    font-size: 7vh;
+    color: white;
+
+}
+
+.p-anuncio {
+    font-size: 6vh;
+    color: white;
+}
+
+.btn-anuncio {
+    width: 20%;
+    height: 40%;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    color: white;
+    background-color: var(--verde-5);
+    border: 0px;
+    border-radius: 1vh;
+    cursor: pointer;
+    font-size: 3vh;
+}
+
+.btn-anuncio:hover {
+    animation-name: btn-anuncio;
+    animation-duration: 300ms;
+    animation-timing-function: ease-out;
+    width: 23%;
+    height: 45%;
+    font-size: 4vh;
+}
+
+@keyframes btn-anuncio {
+    from{
+        width: 20%;
+        height: 40%;
+        font-size: 3vh;
+    
+    }to{
+        width: 23%;
+        height: 45%;
+        font-size: 4vh;
+    }
+}
+
+.btn-anuncio:not(:hover) {
+    animation-name: not-btn-anuncio;
+    animation-duration: 300ms;
+    animation-timing-function: ease-out;
+}
+
+@keyframes not-btn-anuncio {
+    from{
+        width: 23%;
+        height: 45%;
+        font-size: 4vh;
+    }to{
+        width: 20%;
+        height: 40%;
+        font-size: 3vh;
+    
+    }
+}
+
+
+.sombra-izq {
+    box-shadow: -1vh 1vh rgba(0,0,0,.5);
+}
+
+.sombra-der {
+    box-shadow: 1vh 1vh rgba(0,0,0,.5);
+}
