@@ -1,3 +1,31 @@
+:root {
+    --morado-1: #B77AAB;
+    --morado-2: #984C8A;
+    --morado-3: #7A296A;
+    --morado-4: #5B0F4D;
+    --morado-5: #3D0031;
+    --cafe-1: rgba(255, 192, 170, 0.4);
+    --cafe-2: rgba(212, 133, 106, 0.7);
+    --cafe-3: rgba(170, 86, 57, 0.66);
+    --cafe-4: #803015;
+    --cafe-5: #551600;
+    --verde-1: #C7E99B;
+    --verde-2: #98C261;
+    --verde-3: #6E9B34;
+    --verde-4: #4A7413;
+    --verde-5: #2C4E00;
+    --amarillo-1: #D3BB4B;
+    --amarillo-2: #FFF0A9;
+    --amarillo-3: #F7E17B;
+    --amarillo-4: rgba(245, 212, 46, 0.94);
+    --amarillo-5: rgba(143, 121,  15 0.7);
+    --azul-1: #669999;
+    --azul-2: #407F7F;
+    --azul-3: #226666;
+    --azul-4: #0D4D4D;
+    --azul-5: #003333;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -24,6 +52,7 @@ main{
 
 h2 {
     font-family: 'Prompt', sans-serif;
+    color: var(--cafe-4);
 }
 
 h3{
@@ -218,15 +247,17 @@ input {
     margin-top: 4vh;
     cursor: pointer;
     border: solid .5vh transparent;
-    background: linear-gradient(#fff, #fff) no-repeat, linear-gradient(to left, rgb(37, 37, 37) 12vh, #cea87c00 12vh, #cea87c00 22vh, rgb(37, 37, 37) 22vh);
+    color: var(--verde-2);
+    background: linear-gradient(#fff, #fff) no-repeat, linear-gradient(to left, var(--verde-2) 12vh, #cea87c00 12vh, #cea87c00 22vh, var(--verde-2) 22vh);
 }
 
 .btn:hover{
-    background: linear-gradient(rgb(209, 209, 209), rgb(209, 209, 209)) no-repeat, linear-gradient(to left, rgb(37, 37, 37) 0%, #cea87c00 0%, #cea87c00 0%, rgb(37, 37, 37) 0%);
+    background: linear-gradient(var(--verde-3), var(--verde-3)) no-repeat, linear-gradient(to left, var(--verde-4) 0%, #cea87c00 0%, #cea87c00 0%, var(--verde-4) 0%);
     animation-name: btn-hover;
     animation-duration: 300ms;
     animation-timing-function: ease-out;
     font-size: 3.5vh;
+    color: white
 }
 
 .btn:not(:hover){

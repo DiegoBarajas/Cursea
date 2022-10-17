@@ -1,24 +1,30 @@
 :root {
-    --morado-1: #9688C8;
-    --morado-2: #6C5AA9;
-    --morado-3: #4F3C91;
-    --morado-4: #39267D;
-    --morado-5: #251363;
-    --rosa-1: #E894A8;
-    --rosa-2: #C15A72;
-    --rosa-3: #9C314A;
-    --rosa-4: #77122A;
-    --rosa-5: #500013;
-    --verde-1: #82CCA2;
-    --verde-2: #52AF7A;
-    --verde-3: #33965E;
-    --verde-4: #188148;
-    --verde-5: #096631;
-    --amarillo-1: #FFF0A9;
-    --amarillo-2: #F7E17B;
-    --amarillo-3: #D3BB4B;
-    --amarillo-4: #B59D2A;
-    --amarillo-5: #90790F;
+
+        --morado-1: #B77AAB;
+        --morado-2: #984C8A;
+        --morado-3: #7A296A;
+        --morado-4: #5B0F4D;
+        --morado-5: #3D0031;
+        --cafe-1: rgba(255, 192, 170, 0.4);
+        --cafe-2: rgba(212, 133, 106, 0.7);
+        --cafe-3: rgba(170, 86, 57, 0.66);
+        --cafe-4: #803015;
+        --cafe-5: #551600;
+        --verde-1: #C7E99B;
+        --verde-2: #98C261;
+        --verde-3: #6E9B34;
+        --verde-4: #4A7413;
+        --verde-5: #2C4E00;
+        --amarillo-1: #D3BB4B;
+        --amarillo-2: #FFF0A9;
+        --amarillo-3: #F7E17B;
+        --amarillo-4: rgba(245, 212, 46, 0.94);
+        --amarillo-5: rgba(143, 121,  15 0.7);
+        --azul-1: #669999;
+        --azul-2: #407F7F;
+        --azul-3: #226666;
+        --azul-4: #0D4D4D;
+        --azul-5: #003333;
     --fondo: rgb(255, 255, 255);
     --letras: rgb(0, 0, 0);
 }
@@ -42,13 +48,16 @@ main {
 }
 
 button {
-    width: 20%;
+    min-width: 20%;
+    width: max-content;
     height: 65%;
     cursor: pointer;
     border-radius: 2vh;
-    background-color: var(--morado-5);
+    background-color: var(--azul-2);
+    border: .2vh var(--azul-5) solid;
     color: white;
-    font-family: 'Josefin Sans';
+    font-family: Helvetica;
+    font-size: 3vh;
     box-shadow: -.65vh .65vh rgba(0, 0, 0, .5);
 }
 
@@ -56,21 +65,19 @@ button {
     width: 100%;
     height: 20%;
     float: left;
-    background-color: var(--fondo);
 }
 
 .h1-titulo{
     font-size: 7vh;
     text-align: center;
     margin-top: 4vh;
-    color:var(--letras);
+    color: var(--cafe-5)
 }
 
 .sect-blanco-1 {
     width: 15%;
     height: 80%;
     float: left;
-    background-color: var(--fondo);
 
 }
 
@@ -78,7 +85,7 @@ button {
     width: 70%;
     height: 70%;
     float: left;
-    background-color: var(--rosa-2);
+    background-color: #dadada;
     border-radius: 4vh;
 }
 
@@ -110,7 +117,7 @@ button {
 .lab {
     font-size: 5vh;
     font-family: sans-serif;
-    color:var(--letras);
+    color: var(--morado-5)
 }
 
 .lab-cont {
@@ -118,7 +125,7 @@ button {
     font-family: Helvetica;
     margin-left: 1vh;
     margin-right: 4vh;
-    color:var(--letras);
+    color: var(--morado-3)
 }
 
 .lab-switch {
@@ -127,7 +134,7 @@ button {
     font-family: Helvetica;
     margin-left: 2vh;
     margin-right: 1vh;
-    color:var(--letras);
+    color: var(--morado-3)
 }
 
 pre{
@@ -142,7 +149,6 @@ pre{
 }
 
 .btn {
-    width: max-content;
     font-family: Helvetica;
     font-size: 3vh;
 }
@@ -151,16 +157,20 @@ pre{
     animation-name: btn;
     animation-duration: 200ms;
     font-size: 3.2vh;
-    color: rgb(88, 88, 88);
+    color: var(--azul-5);
+    transform: translateY(-.5vh);
+
 }
 
 @keyframes btn {
     from{
         color: white;
         font-size: 3vh;
+        transform: translateY(0vh);
     }to{
-        color: rgb(88, 88, 88);
+        color: var(--azul-5);
         font-size: 3.2vh;
+        transform: translateY(-.5vh);
     }
 }
 
@@ -168,7 +178,7 @@ pre{
 /*  Switch On/off   */
 :root {
     --color-green: #1a1a1a;
-    --color-red: #d3d3d3;
+    --color-red: var(--morado-1);
     --color-button: #fdffff;
     --color-black: #000;
 }

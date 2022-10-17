@@ -1,24 +1,29 @@
 :root {
-    --morado-1: #9688C8;
-    --morado-2: #6C5AA9;
-    --morado-3: #4F3C91;
-    --morado-4: #39267D;
-    --morado-5: #251363;
-    --rosa-1: #E894A8;
-    --rosa-2: #C15A72;
-    --rosa-3: #9C314A;
-    --rosa-4: #77122A;
-    --rosa-5: #500013;
-    --verde-1: #82CCA2;
-    --verde-2: #52AF7A;
-    --verde-3: #33965E;
-    --verde-4: #188148;
-    --verde-5: #096631;
-    --amarillo-1: #FFF0A9;
-    --amarillo-2: #F7E17B;
-    --amarillo-3: #D3BB4B;
-    --amarillo-4: #B59D2A;
-    --amarillo-5: #90790F;
+    --morado-1: #B77AAB;
+    --morado-2: #984C8A;
+    --morado-3: #7A296A;
+    --morado-4: #5B0F4D;
+    --morado-5: #3D0031;
+    --cafe-1: rgba(255, 192, 170, 0.4);
+    --cafe-2: rgba(212, 133, 106, 0.7);
+    --cafe-3: rgba(170, 86, 57, 0.66);
+    --cafe-4: #803015;
+    --cafe-5: #551600;
+    --verde-1: #C7E99B;
+    --verde-2: #98C261;
+    --verde-3: #6E9B34;
+    --verde-4: #4A7413;
+    --verde-5: #2C4E00;
+    --amarillo-1: #D3BB4B;
+    --amarillo-2: #FFF0A9;
+    --amarillo-3: #F7E17B;
+    --amarillo-4: rgba(245, 212, 46, 0.94);
+    --amarillo-5: rgba(143, 121,  15, 0.7);
+    --azul-1: #669999;
+    --azul-2: #407F7F;
+    --azul-3: #226666;
+    --azul-4: #0D4D4D;
+    --azul-5: #003333;
 }
 
 * {
@@ -68,12 +73,13 @@ img {
 .h1-bienvenida {
     font-size: 7vh;
     margin-left: 5%;
+    color: var(--cafe-5);
 }
 
 .sect-mas-vistos {
     width: 90%;
     height: 77%;
-    background-color: var(--verde-5);
+    background-color: var(--cafe-1);
     border-radius: 1vw;
 }
 
@@ -89,6 +95,7 @@ img {
 .h3-mas-vistos {
     font-size: 4vh;
     margin-left: 4vh;
+    color: var(--azul-1);
 }
 
 .art-curso{
@@ -183,7 +190,7 @@ img {
 .curso {
     width: 90%;
     height: 90%;
-    background-color: var(--verde-5);
+    background-color: var(--cafe-1);
     border-radius: 1vw;
     margin-top: 2vw;
     display: flex;
@@ -204,12 +211,13 @@ img {
     margin-top: 7vh;
     margin-left: 5%;
     margin-bottom: 3vh;
+    color: var(--azul-5);
 }
 
 .sect-curso {
     width: 90%;
     height: 29%;
-    background-color: var(--morado-3);
+    background-color: white;
     border-radius: 1vw;
     margin-bottom: 1vw;
     cursor: pointer;
@@ -274,6 +282,7 @@ img {
 .h2-curso-nombre {
     font-size: 4vh;
     margin-left: 1vh;
+    color: var(--morado-3);
 }
 
 .sect-curso-descripcion {
@@ -304,6 +313,7 @@ img {
 .p-duracion {
     font-size: 3.5vh;
     margin-right: 4vh;
+    color: var(--cafe-5)
 }
 
 .sect-3 {
@@ -341,7 +351,7 @@ img {
     height: 70%;
     margin-left: .5vh;
     margin-right: .5vh;
-    background-color: var(--rosa-3);
+    background-color: var(--morado-2);
     border-radius: 2vh;    
     cursor: pointer;
 }
@@ -413,7 +423,7 @@ aside{
 .anuncio {
     width: 75%;
     height: 95%;
-    background-color: #90790F;
+    background-color: var(--amarillo-5);
     border-radius: 3.5vh;
 }
 
@@ -462,7 +472,7 @@ aside{
     margin-left: 3vh;
     margin-right: 3vh;
     color: white;
-    background-color: var(--verde-5);
+    background-color: var(--azul-3);
     border: 0px;
     border-radius: 1vh;
     cursor: pointer;

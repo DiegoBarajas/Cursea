@@ -168,7 +168,7 @@
 
                 </article>
                 <article class="art-logout">
-                    <button onclick="window.location.href='logout.php';" class="btn logout">Cerrar Sesion</button>
+                    <button onclick="window.location.href='logout.php';" class="logout">Cerrar Sesion</button>
                 </article>
             </section>
             <section class="sect-blanco-2"></section>
