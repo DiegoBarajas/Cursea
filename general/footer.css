@@ -38,12 +38,20 @@ footer {
     text-align: center;
 }
 
+.a-footer:hover{
+    color:rgb(180, 180, 180);
+}
+
 .a-footer:visited {
     font-family: Helvetica;
     font-size: 3vh;
     color: white;
     text-decoration: none;
     text-align: center;
+}
+
+.a-footer:visited:hover {
+    color:rgb(180, 180, 180);
 }
 
 .hr-footer {
