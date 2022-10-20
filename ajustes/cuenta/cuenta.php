@@ -33,7 +33,7 @@
         //Variables 
         $nombre = $row['nombre'];
         $email = $row['email'];
-        $password = $row['contraseña'];
+        $password = $_SESSION['password'];
         $foto = $row['foto'];
         $tema = $_SESSION['tema'];
         
@@ -117,20 +117,18 @@
             <section class="sect-blanco-1"></section>
 
             <section class="sect-contenido">
+                <section class="sect-blanco-cont"></section>
                 <article class="art">
                     <label class="lab subtitulo"><b>Foto de perfil: </b></label>
                     <img src="/general/imagen_usuario.php" alt="Imagen de Usuario" class="img-perfil">
-                    <button class="btn" onclick="window.location.href = 'cambiar_img/cambiar_img.php';">Cambiar Imagen</button>
                 </article>
                 <article class="art">
                     <lab class="lab subtitulo"><b>Nombre: </b></lab>
                     <?php echo '<label class="lab-cont contenido">'.$nombre.'</label>'; ?>
-                    <button class="btn" onclick="window.location.href='';">Cambiar Nombre</button>
                 </article>
                 <article class="art">
                     <lab class="lab subtitulo"><b>Correo: </b></lab>
                     <?php echo '<label class="lab-cont contenido">'.$email.'</label>'; ?>
-                    <button class="btn" onclick="window.location.href='';">Cambiar Correo</button>
 
                 </article>
                 <article class="art">
@@ -143,7 +141,9 @@
                         }
                         echo '<label class="lab-cont contenido">' . $password_dec . '</label>'; 
                      ?>
-                     <button class="btn" onclick="window.location.href='';">Cambiar Contraseña</button> 
+                </article>
+                <article class="art">
+                    <button class="btn" onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';">Cambiar Datos</button>
                 </article>
                 <article class="art">
                     <lab class="lab subtitulo"><b>Tema: </b></lab>
@@ -170,6 +170,8 @@
                 <article class="art-logout">
                     <button onclick="window.location.href='logout.php';" class="logout">Cerrar Sesion</button>
                 </article>
+                <section class="sect-blanco-cont"></section>
+
             </section>
             <section class="sect-blanco-2"></section>
         </main>

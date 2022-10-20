@@ -31,6 +31,7 @@ header {
     height: 7.5vh;
     background-color: #7A296A;
     position: fixed;
+    z-index: 5;
 }
 
 .nav-ham {

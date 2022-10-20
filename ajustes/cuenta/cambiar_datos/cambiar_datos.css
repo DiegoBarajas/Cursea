@@ -43,9 +43,22 @@ main{
 }
 
 .art-cambiar-img{
-    width: 70%;
+    width: 35%;
     height: 85%;
-    border-radius: 2vh;
+    border-bottom-right-radius: 2vh;
+    border-top-right-radius: 2vh;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: #dadada;
+}
+.art-cambiar-datos{
+    width: 35%;
+    height: 85%;
+    border-bottom-left-radius: 2vh;
+    border-top-left-radius: 2vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,7 +77,7 @@ main{
     width: 30vh;
     background-color: var(--morado-3);
     border-radius: 2vh;
-    margin-bottom: 10vh;
+    margin-bottom: 2vh;
 }
 
 .lab-file {
@@ -78,6 +91,7 @@ main{
     justify-content: center;
     align-items: center;
     background-color: var(--verde-3);
+    color: rgb(0, 44, 0);
 }
 
 .lab-file:hover{
@@ -137,45 +151,11 @@ main{
     border: 0px;
     border-radius: 1vh;
     font-weight: bold;
+    color: rgb(0, 44, 0);
 }
 
 .btn-submit:hover{
-    width: 27vh;
-    height: 6.5vh;
-    font-size: 3vh;
     color: white;
-
-    animation-name: btn-submit;
-    animation-duration: 200ms;
-}
-
-@keyframes btn-submit {
-    from{
-        width: 25vh;
-        height: 6vh;
-        font-size: 2.8vh;
-    }to{
-        width: 27vh;
-        height: 6.5vh;
-        font-size: 3vh;
-    }
-}
-
-.btn-submit:not(:hover){
-    animation-name: not-btn-submit;
-    animation-duration: 100ms;
-}
-
-@keyframes not-btn-submit {
-    from{
-        width: 27vh;
-        height: 6.5vh;
-        font-size: 3vh;
-    }to{
-        width: 25vh;
-        height: 6vh;
-        font-size: 2.8vh;
-    }
 }
 
 .img-nueva{
@@ -194,6 +174,25 @@ form {
 
 .p-error{
     font-size: 2vh;
-    color: white;
-    margin-top: 1vh;
+    color: rgb(170, 0, 0);
+    font-weight: bold;
+}
+
+.art-btns{
+    margin-top: 10vh;
+    width: 100%;
+    height: 10%;
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.btn-cancel{
+    margin-left: 2vh;
+}
+
+.form-cambiar-datos{
+    
 }

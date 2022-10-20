@@ -8,7 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Prompt:wght@600&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="img/icono.png" type="image/x-icon">
+        <link rel="shortcut icon" href="/img/icono.png" type="image/x-icon">
         <?php
             session_start();
             if((!isset($_SESSION['tema'])) || ($_SESSION['tema'] == "claro")){
@@ -37,7 +37,7 @@
             <!-- Espacio en blanco -->
             <section class="sect-spa1"></section>
             <!-- Menu Principal -->
-            <nav class="nav-home">
+            <nav class="nav-home" onclick="window.location.href='/index.php'">
                 <img src="/img/home-menu.png" alt="home" class="img-navbar-home img-here">
             </nav>
             <!-- Buscar -->
@@ -68,8 +68,6 @@
 
                     require_once("DB/crud.php");
             ?>
-
-            
         </header>
 
 
@@ -122,7 +120,7 @@
                                     </section>
 
                                     
-                                    <form action="curso/informacion_curso.php" method="post" id="form_curso-mas-visto-'.$i.'">
+                                    <form action="curso/informacion_curso.php" method="get" id="form_curso-mas-visto-'.$i.'">
                                         <input type="hidden" name="id" value="'. $row['id'] .'">
                                     </form>
                                 ';
@@ -170,7 +168,7 @@
                                         </section>
                                     </section> 
 
-                                    <form action="curso/informacion_curso.php" method="post" id="form_curso-'.$i.'">
+                                    <form action="curso/informacion_curso.php" method="get" id="form_curso-'.$i.'">
                                         <input type="hidden" name="id" value="'. $row['id'] .'">
                                     </form>
                                 ';
@@ -196,17 +194,28 @@
                 </section>
                 <section class="sect-cate-cuadritos">
 
-                    <!-- Cuadrito Categoria (5) -->
-                    <article class="art-cuadrito">
-                        <section class="sect-img-curso">
-                            <img src="img/icono.png" alt="imagen curso" class="img-curso">
-                        </section>
-                        <section class="sect-lab-curso">
-                            <label class="lab-nombre-curso contenido">$nombre curso</label>
-                        </section>
-                    </article>
+                <?php
+                        $categoria = "categoria";
+
+                        echo '
+                        <article class="art-cuadrito" onclick="clickCategoria(form_'.$categoria.')">
+                            <section class="sect-img-curso">
+                                <img src="img/icono.png" alt="imagen curso" class="img-curso">
+                            </section>
+                            <section class="sect-lab-curso">
+                                <label class="lab-nombre-curso contenido">$nombre curso</label>
+                            </section>
+                        </article>
 
 
+                        <form action="/curso/categoria/categoria.php" method="get" id="form_'.$categoria.'">
+                            <input type="hidden" name="categoria" value="'.$categoria.'">
+                        </form>
+                        ';
+
+                ?>
+
+                
 
 
                 </section>       

@@ -213,7 +213,7 @@ input {
 }
 .Mensaje_de_ERROR{
     font-size: 2.5vh;
-    color: red;
+    color: rgb(170,0,0);
     text-align: center;
 }
 

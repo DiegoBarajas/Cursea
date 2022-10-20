@@ -14,7 +14,7 @@
             if((!isset($_SESSION['tema'])) || ($_SESSION['tema'] == "claro")){
                 echo '<link rel="stylesheet" href="ajustes.css">';
             }else if($_SESSION['tema'] == "oscuro"){
-                echo '<link rel="stylesheet" href="ajustes_osc.css">';
+                echo '<link rel="stylesheet" href="ajustes.css">';
             }
         ?>
 

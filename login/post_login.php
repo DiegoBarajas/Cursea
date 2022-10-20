@@ -12,13 +12,14 @@
     $band=false;
     if( $result->num_rows > 0 ){
         while( $row = $result->fetch_assoc() ){
-            if( ($row['email'] == $email) && ($row['contraseña'] == $password) ){
+            if( ($row['email'] == $email) && (password_verify($password, $row['password'])) ){
                 
                 session_start();
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['nombre'] = $row['nombre'];
                 $_SESSION['tema'] = $row['tema'];
                 $_SESSION['logged'] = "si";
+                $_SESSION['password'] = $password;
                 $band=true;
 
                 header('Location: ' . "../index.php");

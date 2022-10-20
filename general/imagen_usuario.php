@@ -1,5 +1,4 @@
 <?php
-
     require_once("../DB/crud.php");
     session_start();
 

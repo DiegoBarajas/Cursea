@@ -16,12 +16,12 @@
             if((!isset($_SESSION['logged']) || $_SESSION['logged']=='no')){
                 header("Location: ../index.php");
             }else{
-                if(!isset($_POST['id'])){
+                if(!isset($_GET['id'])){
                     header("Location: ../index.php");
                 }    
             }
 
-            $id = $_POST['id'];
+            $id = $_GET['id'];
 
             //-------- DB ---------
             $sql = "SELECT * FROM curso WHERE id=$id";
@@ -49,29 +49,33 @@
             <!-- Menu Hamburguesa -->
             <nav class="nav-ham">
                 <label for="btn-menu" class="lab-ham">
-                    <img src="../img/ham-menu.png" alt="menu" class="img-navbar-ham">
+                    <img src="/img/ham-menu.png" alt="menu" class="img-navbar-ham">
                 </label>
             </nav>
             <!-- Logo -->
             <section class="sec-logo">
-                <img src="../img/cursea-logo-blanco.png" alt="Logo" class="img-logo">
+                <img src="/img/cursea-logo-blanco.png" alt="Logo" class="img-logo">
             </section>
             <!-- Espacio en blanco -->
             <section class="sect-spa1"></section>
             <!-- Menu Principal -->
             <nav class="nav-home" onclick="window.location.href = '../index.php';">
-                <img src="../img/home-menu.png" alt="home" class="img-navbar-home img-here">
+                <img src="/img/home-menu.png" alt="home" class="img-navbar-home">
             </nav>
             <!-- Buscar -->
             <nav class="nav-search">
-                <img src="../img/search-menu.png" alt="search" class="img-navbar-search">
+                <img src="/img/search-menu.png" alt="search" class="img-navbar-search">
             </nav>
             <!-- Usuario -->
-            <nav class="nav-user">
-                <a href="../ajustes/ajustes.php" class="nav-user">
-                    <img src="../img/user-menu.png" alt="user" class="img-navbar-user">
-                </a>
-            </nav>
+            <?php
+                echo '
+                    <nav class="nav-user">
+                        <a href="/ajustes/ajustes.php" class="nav-user">
+                            <img src="/general/imagen_usuario.php" alt="user" class="img-navbar-user">
+                        </a>
+                    </nav>
+                ';
+            ?>
         </header>
 
 
@@ -113,10 +117,14 @@
 
                             while($row = $res->fetch_assoc()){
                                 echo '
-                                    <section class="sect-contenido">
+                                    <section class="sect-contenido" onclick="iniciar('.$row['id'].')">
                                         <img src="../img/curso/'.$tipo_curso.'.png" alt="V" class="img-contenido">
                                         <h4 class="h4-info-curso subtitulo">'.($i+1).'. ' . $row['nombre'] . '</h4>
                                     </section>
+
+                                    <form action="'.$tipo_curso.'.php" method="get" id="form_curso_'.$row['id'].'">
+                                        <input type="hidden" name="id" value="'.$row['id'].'">
+                                    </form>
                                 ';
 
                                 $i++;
@@ -124,7 +132,6 @@
                             for($i=0;$i<12;$i++)
                             
                     ?>
-
 
                         </section>
 
@@ -142,5 +149,6 @@
                     <button class="btn-start btn subtitulo"><img src="../img/curso/start.png" alt="Comenzar" class="img-start">Comenzar Curso</button>
                 </section>
             </article>
+            <script src="informacion_curso.js"></script>
     </body>
 </html>

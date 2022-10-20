@@ -35,3 +35,7 @@ function redirectCursomasVisto2(){
 
     form.submit();
 }
+
+function clickCategoria(categoria){
+    categoria.submit();
+}

@@ -1,0 +1,117 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+main{
+    margin-top: 7.5vh;
+    float: left;
+    width: 100%;
+    height: max-content;
+    min-height: 72.5vh;  
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.article-nombre-curso{
+    width: 100%;
+    height: 25%;
+    float: left;
+    
+    margin-bottom: 3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.h2-categoria{
+    font-size: 7vh;
+}
+
+.section-maq-vacio{
+    width: 90%;
+    height: max-content;
+    float: left;
+    background-color: rgba(231, 0, 0, 0.397);
+    border-radius: 3vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 5vh;
+}
+
+.section-maq-info{
+    width: 95%;
+    height: 23vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    cursor: pointer;
+    border-radius: 3vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.section-maq-info:hover{
+    transform: translateY(-1vh);
+    animation-name: section-maq-info;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes section-maq-info {
+    from { transform: translateY(0vh); }
+    to { transform: translateY(-1vh); }
+}
+
+.section-maq-info:not(:hover){
+    animation-name: not-section-maq-info;
+    animation-duration: 100ms;
+    animation-timing-function: ease-in;
+}
+
+@keyframes not-section-maq-info {
+    from { transform: translateY(-1vh); }
+    to { transform: translateY(0vh); }
+}
+
+p{
+    font-size: 4vh;
+}
+
+
+.sect-texto-curso {
+    float: left;
+    width: 66%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.p-titulo-curso{
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 5vh;
+}
+
+.p-descripcion-video {
+    margin-top: 1vh;
+    margin-left: 1vh;
+    font-size: 2.5vh;
+}
+
+
+.img-video{
+    height: 100%;
+    float: left;
+    margin-left: 2.5vh;
+}

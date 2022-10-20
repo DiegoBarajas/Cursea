@@ -13,5 +13,5 @@
             sentencia($sql);
         }
 
-        header("Location: /ajustes/cuenta/cambiar_img/cambiar_img.php");
+        header("Location: /ajustes/cuenta/cambiar_datos/cambiar_datos.php");
 ?>

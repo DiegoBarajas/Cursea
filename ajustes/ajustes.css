@@ -86,6 +86,11 @@ main{
     border-bottom: 1px solid black;
 }
 
+.art-datos:hover .sect-datos h3{
+    color: var(--morado-2);
+}
+
+
 @keyframes art-datos {
     0% { transform: translateY(0vh); }
     40% { transform: translateY(-3vh); }

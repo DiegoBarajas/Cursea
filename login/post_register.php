@@ -5,6 +5,7 @@
     $nombre = $_POST['Registro_nombre_completo'];
     $email = $_POST['Registro_correo'];
     $password = $_POST['Registro_contrasena'];
+    $password_enc = password_hash($password, PASSWORD_DEFAULT);
 
     //Sentencia SQL
     $sql = "SELECT * FROM usuario";
@@ -23,14 +24,15 @@
 
     if(!$bandera){
         //Sentencia SQL
-        if($activa){
-            $sql = "UPDATE usuario SET nombre = '$nombre', contraseña='$password' WHERE email='$email'";
+        if(!$activa){
+            $sql = "UPDATE usuario SET nombre = '$nombre', password='$password_enc' WHERE email='$email'";
         }else{
-            $sql = "INSERT INTO usuario (nombre, email, contraseña, premium, tarjeta, foto, tema, activa) VALUES ('$nombre', '$email', '$password', 'no', NULL, NULL, 'claro', 0)";
+            $sql = "INSERT INTO usuario (nombre, email, password, premium, tarjeta, foto, tema, activa) VALUES ('$nombre', '$email', '$password_enc', 'no', NULL, NULL, 'claro', 0)";
         }
 
         //Insercion
-        if(sentencia($sql) === TRUE){
+        $res = sentencia($sql);
+        if($res == TRUE){
             header('Location: ' . "../index.php");
         }else{
             echo "ERROR: " . $sql . "<br>" . $conn->error;
