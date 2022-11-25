@@ -4,6 +4,8 @@
     --morado-3: #7A296A;
     --morado-4: #5B0F4D;
     --morado-5: #3D0031;
+    --morado-6: #ee86d9;
+    --morado-7: #e955cb;
     --cafe-1: rgba(255, 192, 170, 0.4);
     --cafe-2: rgba(212, 133, 106, 0.7);
     --cafe-3: rgba(170, 86, 57, 0.66);
@@ -34,7 +36,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-color: grey;
+    background-color: #4f4f4f;
 }
 
 main{
@@ -42,6 +44,10 @@ main{
     height: 92.5vh;
     float: left;
     margin-top: 7.5vh;
+}
+
+h1{
+    cursor: default;
 }
 
 .art-titulo {
@@ -57,6 +63,7 @@ main{
     font-size: 9vh;
     text-align: center;
     margin-top: 3vh;
+    color: var(--morado-6);
 }
 
 .art-ajustes {
@@ -85,6 +92,11 @@ main{
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
+
+.art-datos:hover .sect-datos h3{
+    color: var(--morado-7);
+}
+
 
 @keyframes art-datos {
     0% { transform: translateY(0vh); }
@@ -140,16 +152,16 @@ main{
 }
 
 .h3-nombre-dato {
-    font-family: sans-serif;
     font-size: 3vh;
     margin-left: 2vh;
+    color: var(--morado-5);
 }
 
 .p-desc-dato {
     font-size: 2vh;
-    font-family: Helvetica;
     margin-top: 1vh;
     margin-left: 2vh;
+    color:gray
 }
 
 .img-flecha {

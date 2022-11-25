@@ -1,0 +1,41 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    margin-top: 5px;
+    width: 350px;
+    margin-bottom: 5px;
+}
+
+a{
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    left: 10px;
+    bottom: 10px;
+}
+
+.atras{
+    bottom: 30px;
+}
+
+.si{
+    width: fit-content;
+}
+
+section{
+    display: flex;
+    justify-content: center;
+}

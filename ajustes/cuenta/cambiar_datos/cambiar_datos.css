@@ -54,36 +54,48 @@ main{
 
     background-color: #dadada;
 }
+
 .art-cambiar-datos{
     width: 35%;
     height: 85%;
     border-bottom-left-radius: 2vh;
     border-top-left-radius: 2vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
 
     background-color: #dadada;
 }
 
 .h2-actual{
-    font-size: 7vh;
+    cursor: default;
+    font-size: 4vh;
     margin-bottom: 2.5vh;
-    color: var(--morado-5);
+}
+
+.h1-titulo{
+    cursor: default;
+    font-size: 4vh;
+    margin-bottom: 2.5vh;
+    margin-top: 1vh;
+    margin-left: 5vh;
 }
 
 .img-actual{
-    width: 30vh;
-    background-color: var(--morado-3);
-    border-radius: 2vh;
+    width: 20vh;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 50vh;
     margin-bottom: 2vh;
+
+    outline: .5vw var(--morado-5) solid;
 }
 
 .lab-file {
-    width: 30vh;
-    height: 5vh;
-    font-size: 2.5vh;
+    width: 32vh;
+    height: 6vh;
+    font-size: 3vh;
     cursor: pointer;
     border-radius: 1vh;
     border: 0px;
@@ -95,47 +107,8 @@ main{
 }
 
 .lab-file:hover{
-    width: 32vh;
-    height: 5.5vh;
-    font-size: 2.7vh;
     background-color: var(--verde-4);
     color: white;
-
-    animation-name: lab-file;
-    animation-duration: 200ms;
-}
-
-@keyframes lab-file {
-    from{
-        width: 30vh;
-        height: 5vh;
-        font-size: 2.5vh;
-        background-color: var(--verde-3);
-    }to{
-        width: 32vh;
-        height: 5.5vh;
-        font-size: 2.7vh;
-        background-color: var(--verde-4);
-    }
-}
-
-.lab-file:not(:hover){
-    animation-name: not-lab-file;
-    animation-duration: 100ms;
-}
-
-@keyframes not-lab-file {
-    from{
-        width: 32vh;
-        height: 5.5vh;
-        font-size: 2.7vh;
-        background-color: var(--verde-4);
-    }to{
-        width: 30vh;
-        height: 5vh;
-        font-size: 2.5vh;
-        background-color: var(--verde-3);
-    }
 }
 
 .input-file{
@@ -159,8 +132,14 @@ main{
 }
 
 .img-nueva{
-    height: 8vh;
+    height: 10vh;
+    width: 10vh;
+    object-fit: cover;
     margin-left: 2vh;
+    border-radius: 50vh;
+    margin-top: 1vh;
+
+    background: rgba(0,0,0,0);
 }
 
 form {
@@ -173,13 +152,17 @@ form {
 }
 
 .p-error{
+    width: 100%;
     font-size: 2vh;
     color: rgb(170, 0, 0);
     font-weight: bold;
+    text-align: center;
+    margin-bottom: 2vh;
+    margin-top: 1vh;
 }
 
 .art-btns{
-    margin-top: 10vh;
+    margin-top: 5.5vh;
     width: 100%;
     height: 10%;
     float: left;
@@ -194,5 +177,53 @@ form {
 }
 
 .form-cambiar-datos{
-    
+    margin-top: 1vh;
+    width: 100%;
+    height: 40%;
+    float: left;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+
+.lab-form{
+    font-size: 3vh;
+    margin-left: 5vh;
+    margin-top: 3vh;
+}
+
+.input-form{
+    width: 85%;
+    min-height: 5vh;
+    font-size: 3vh;
+    margin-left: 5vh;
+    border-radius: 1vh;
+    border: 0vh;
+    margin-top: .5vh;
+}
+
+.sect-conf{
+    margin-top: 18vh;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-msg{
+    font-size: 2.5vh;
+    color: black;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1.5vh;
+}
+
+.p-cambiar-img{
+    font-size: 3vh;
+    margin-top: 2vh;
+}
+
+.lab-img{
+    cursor: pointer;
 }

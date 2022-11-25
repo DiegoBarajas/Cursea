@@ -4,6 +4,7 @@
     --morado-3: #7A296A;
     --morado-4: #5B0F4D;
     --morado-5: #3D0031;
+    --morado-6: #ee86d9;
     --cafe-1: rgba(255, 192, 170, 0.4);
     --cafe-2: rgba(212, 133, 106, 0.7);
     --cafe-3: rgba(170, 86, 57, 0.66);
@@ -18,7 +19,7 @@
     --amarillo-2: #FFF0A9;
     --amarillo-3: #F7E17B;
     --amarillo-4: rgba(245, 212, 46, 0.94);
-    --amarillo-5: rgba(143, 121,  15 0.7);
+    --amarillo-5: rgba(143, 121,  15, 0.7);
     --azul-1: #669999;
     --azul-2: #407F7F;
     --azul-3: #226666;
@@ -31,10 +32,16 @@
     padding: 0px;
 }
 
-html, body {
+html {
     width: 100%;
     height: 100%;
-    background-color: rgb(87, 87, 87);
+}
+
+body{
+    width: 100%;
+    height: max-content;
+
+    background-color: #4f4f4f;
 }
 
 main {
@@ -48,11 +55,10 @@ img {
     max-height: 95%;
 }
 
-.sect-spa2{
-    width: 100%;
-    height: 1%;
-    float: left;
+h1, h2, h3, h4, h5, h6, p{
+    cursor: default;
 }
+
 
 .sect-1{
     width: 100%;
@@ -74,12 +80,13 @@ img {
 .h1-bienvenida {
     font-size: 7vh;
     margin-left: 5%;
+    color: var(--morado-6);
 }
 
 .sect-mas-vistos {
     width: 90%;
     height: 77%;
-    background-color: var(--verde-5);
+    background-color: var(--morado-1);
     border-radius: 1vw;
 }
 
@@ -95,6 +102,7 @@ img {
 .h3-mas-vistos {
     font-size: 4vh;
     margin-left: 4vh;
+    color: var(--cafe-4);
 }
 
 .art-curso{
@@ -104,7 +112,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
 .sect-curso-mas-visto {
@@ -112,6 +119,9 @@ img {
     height: 100%;
     margin-left: 2vh;
     margin-right: 2vh;
+
+    cursor: pointer;
+
 }
 
 .sect-curso-mas-visto:hover {
@@ -155,6 +165,8 @@ img {
 .img-mas-visto {
     margin-top: 1vh;
     width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .sect-p-mas-visto {
@@ -163,12 +175,13 @@ img {
     float: left;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .p-mas-visto {
-    margin-top: 3vh;
+    margin-top: 1vh;
     font-size: 3vh;
+    text-align: center;
 }
 
 .art-puntitos {
@@ -189,7 +202,7 @@ img {
 .curso {
     width: 90%;
     height: 90%;
-    background-color: var(--verde-5);
+    background-color: var(--morado-1);
     border-radius: 1vw;
     margin-top: 2vw;
     display: flex;
@@ -210,14 +223,16 @@ img {
     margin-top: 7vh;
     margin-left: 5%;
     margin-bottom: 3vh;
+    color: var(--cafe-4);
 }
 
 .sect-curso {
     width: 90%;
-    height: 29%;
-    background-color: var(--morado-3);
-    border-radius: 1vw;
-    margin-bottom: 1vw;
+    min-height: 29%;
+    height: fit-content;
+    background-color: var(--cafe-1);
+    border-radius: 1vh;
+    margin-bottom: 1vh;
     cursor: pointer;
 }
 
@@ -280,6 +295,7 @@ img {
 .h2-curso-nombre {
     font-size: 4vh;
     margin-left: 1vh;
+    color: var(--azul-3);
 }
 
 .sect-curso-descripcion {
@@ -288,12 +304,18 @@ img {
     float: left;
     display: flex;
     justify-content: flex-start;
-    align-items: center
+    align-items: flex-start;
 }
 
 .p-descripcion {
-    font-size: 2vh;
+    font-size: 2.5vh;
     margin-left: 1vh;
+    margin-right: 2vh;
+    margin-top: 1vh;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    cursor: pointer;
 }
 
 .sect-curso-duracion {
@@ -306,8 +328,9 @@ img {
 }
 
 .p-duracion {
-    font-size: 3.5vh;
+    font-size: 3vh;
     margin-right: 4vh;
+    color: var(--cafe-5)
 }
 
 .sect-3 {
@@ -345,7 +368,7 @@ img {
     height: 70%;
     margin-left: .5vh;
     margin-right: .5vh;
-    background-color: var(--rosa-3);
+    background-color: var(--morado-2);
     border-radius: 2vh;    
     cursor: pointer;
 }
@@ -388,8 +411,11 @@ img {
 
 .img-curso {
     height: 100%;
+    width: 100%;
+    object-fit: contain;
     display: block;
     margin: auto;
+    margin-top: 1vh;
 }
 
 .sect-lab-curso {
@@ -398,11 +424,14 @@ img {
     float: left;
     display: flex;
     justify-content: center;
+    margin-top: 2vh;
 }
 
 .lab-nombre-curso {
     text-align: center;
     font-size: 3vh;
+    font-weight: bold;
+    color: white;
 }
 
 aside{
@@ -415,9 +444,9 @@ aside{
 }
 
 .anuncio {
-    width: 75%;
+    width: 55%;
     height: 95%;
-    background-color: #90790F;
+    background-color: var(--amarillo-5);
     border-radius: 3.5vh;
 }
 
@@ -450,23 +479,25 @@ aside{
 }
 
 .h1-anuncio {
-    font-size: 7vh;
+    font-size: 6vh;
     color: white;
 
 }
 
 .p-anuncio {
-    font-size: 6vh;
+    font-size: 4vh;
     color: white;
 }
 
 .btn-anuncio {
-    width: 20%;
-    height: 40%;
+    width: max-content;
+    min-width: 20%;
+    height: max-content;
+    min-height: 40%;
     margin-left: 3vh;
     margin-right: 3vh;
     color: white;
-    background-color: var(--verde-5);
+    background-color: var(--azul-3);
     border: 0px;
     border-radius: 1vh;
     cursor: pointer;
@@ -477,9 +508,9 @@ aside{
     animation-name: btn-anuncio;
     animation-duration: 300ms;
     animation-timing-function: ease-out;
-    width: 23%;
+    width: 25%;
     height: 45%;
-    font-size: 4vh;
+    font-size: 3vh;
 }
 
 @keyframes btn-anuncio {
@@ -489,9 +520,9 @@ aside{
         font-size: 3vh;
     
     }to{
-        width: 23%;
+        width: 25%;
         height: 45%;
-        font-size: 4vh;
+        font-size: 3vh;
     }
 }
 
@@ -503,9 +534,9 @@ aside{
 
 @keyframes not-btn-anuncio {
     from{
-        width: 23%;
+        width: 25%;
         height: 45%;
-        font-size: 4vh;
+        font-size: 3vh;
     }to{
         width: 20%;
         height: 40%;
@@ -513,7 +544,6 @@ aside{
     
     }
 }
-
 
 .sombra-izq {
     box-shadow: -1vh 1vh rgba(0,0,0,.5);

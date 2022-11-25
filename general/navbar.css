@@ -35,14 +35,13 @@ header {
 }
 
 .nav-ham {
-    width: 5%;
-    height: 100%;
+    width: 7.5vh;
+    height: 7.5vh;
     float: left;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 .lab-ham {
     width: 100%;
@@ -53,111 +52,72 @@ header {
     cursor: pointer;
 }
 
-.lab-ham:hover{
-    height: 120%;
-    animation-name: hamb;
-    animation-duration: 200ms;
-}
-
-@keyframes hamb{
-    from{ height: 100%; }
-    to{ height: 120%; }
-}
-
-.lab-ham:not(:hover){
-    animation-name: not-hamb;
-    animation-duration: 200ms;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes not-hamb{
-    from{ height: 120%; }
-    to{ height: 100%; }
-}
-
 .img-navbar-ham {
     height: 70%;
     display: block;
     margin: auto;
 }
 
-@keyframes img-navar{
-    from{ height: 70%; }
-    to{ height: 90%; }
-}
 
-@keyframes not-img-navar{
-    from{ height: 90%; }
-    to{ height: 70%; }
+.img-navbar-ham:hover{
+    filter: invert(10%);
 }
 
 .img-navbar-home {
-    height: 70%;
+    height: 85%;
+    object-fit: contain;
     display: block;
     margin: auto;
 }
 
 .img-navbar-home:hover{
-    height: 90%;
-    animation-name: img-navar;
-    animation-duration: 300ms;
-    animation-timing-function: ease-in-out;
-} 
-
-.img-navbar-home:not(:hover){
-    animation-name: not-img-navar;
-    animation-duration: 200ms;
-} 
+    filter: invert(10%);
+}
 
 .img-navbar-search {
-    height: 70%;
+    height: 80%;
+    object-fit: contain;
     display: block;
     margin: auto;
 }
+
 
 .img-navbar-search:hover{
-    height: 90%;
-    animation-name: img-navar;
-    animation-duration: 300ms;
-    animation-timing-function: ease-in-out;
-} 
-
-.img-navbar-search:not(:hover){
-    animation-name: not-img-navar;
-    animation-duration: 200ms;
-} 
-
-.img-navbar-user {
-    height: 70%;
-    display: block;
-    margin: auto;
-    border-radius: 50vh;
+    filter: invert(10%);
 }
 
-.img-navbar-user:hover{
-    height: 90%;
-    animation-name: img-navar;
-    animation-duration: 300ms;
-    animation-timing-function: ease-in-out;
-} 
 
-.img-navbar-user:not(:hover){
-    animation-name: not-img-navar;
-    animation-duration: 200ms;
-} 
+.img-navbar-user {
+    height: 6vh;
+    width: 6vh;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    border-radius: 20vh;
+    background-color: var(--morado-1);
+
+    outline: .2vw var(--morado-1) solid;
+    
+}
+
+
+.img-navbar-user:hover{
+    filter: invert(10%);
+}
+
+
 
 .sec-logo {
-    width: 15%;
     height: 100%;
     float: left;
-    display: flex;
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .img-logo {
-    width: 70%;
-    display: block;
-    margin: auto;
+    height: 50%;
+    cursor: pointer;
 }
 
 .img-here {
@@ -165,40 +125,36 @@ header {
     border-radius: 1vh;
 }
 
-.sect-spa1 {
-    width: 69%;
-    height: 100%;
-    float: left;
-}
-
 .nav-home {
-    width: 3%;
     height: 100%;
-    float: left;
+    float: right;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding-right: 5px;
+
 }
 
 .nav-search {
-    width: 3%;
     height: 100%;
-    float: left;
+    float: right;
     display: flex;
     justify-content: center;
     align-items: center;   
     cursor: pointer;
+    padding-right: 5px;
+
 }
 
 .nav-user {
-    width: 5%;
     height: 100%;
-    float: left;
+    float: right;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding-right: 5px;
 }
 
 .container-menu {
@@ -219,42 +175,61 @@ header {
 }
 
 .cont-menu {
-    width: 40vh;
+    width: 50vh;
     background: #1c1c1c;
-    height: 100%;
+    height: min-content;
     position: fixed;
     transition: all 500ms ease;
+    cursor: default;
+    overflow-y: auto;
+    z-index: 5;
 }
 
 .cont-menu nav{
-    transform: translateY(15%);
+    transform: translateY(10%);
+    height: 100vh;
 }
 
-.cont-menu nav .sect-nav{
-    height: 5vh;
+.sect-nav{
+    height: 60px;
     display: block;
     text-decoration: none;
-    padding: 20px;
     border-left: 5px solid transparent;
     transition: all 400ms ease;
     cursor: pointer;
+    display: flex;
 }
 
-.margen-top {
-    margin-top:5vh;
+hr{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    color: white;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.p-navbar{
+    color: white;
+    margin: 0px;
+    font-family: Helvetica;
+    font-weight: bold;
+    padding: 0px;
+    margin-left: 2vw;
 }
 
 .sect-nav-icon {
-    width: 20%;
+    margin-left: 10px;
     height: 100%;
-    float: left;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .sect-nav-img {
-    height: 100%;
+    height: 30px;
+    object-fit: contain;
 }
 
 .sect-nav-text {
@@ -267,58 +242,16 @@ header {
 }
 
 .nav-p{
-    margin-left: 1vh;
-    font-size: 3vh;
+    margin-left:10px;
     font-family: Helvetica;
     color: white;
+    cursor: pointer;
+
 }
 
 .cont-menu nav .sect-nav:hover{
-    border-left: 1vh solid #c7c7c7;
-    background: #752b2b;
-}
-
-.cont-menu label{
-    position: absolute;
-    right: 1vh;
-    top: 1vh;
-    color: #fff;
-    cursor: pointer;
-    font-family: Helvetica;
-    font-size: 3vh;
-}
-
-.equis:hover{
-    animation-name: equis;
-    animation-duration: 150ms;
-    font-size: 3.5vh; 
-    color: red;
-}
-
-@keyframes equis{
-    from{ 
-        font-size: 3vh; 
-        color: #fff;
-    }to{
-        font-size: 3.5vh; 
-        color: red;
-    } 
-}
-
-.equis:not(:hover){
-    animation-name: not-equis;
-    animation-duration: 150ms;
-
-}
-
-@keyframes not-equis{
-    from{ 
-        font-size: 3.5vh; 
-        color: red;
-    }to{
-        font-size: 3vh; 
-        color: #fff;
-    } 
+    border-left: .5vw solid var(--morado-3);
+    background: var(--morado-1);
 }
 
 .hide {
@@ -335,4 +268,49 @@ header {
 
 .contenido {
     font-family: Helvetica;
+}
+
+
+
+
+#load{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(34, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    position: fixed;
+    z-index: 20;
+}
+
+#contenedor{ 
+    display: grid;
+    place-content: center;
+    color: #000;
+}
+  
+.rueda {
+    border: 10px solid #b77aab9a;
+    border-radius: 50%;
+    border-left-color: transparent;
+    width: 80px;
+    height: 80px;
+    animation: giro 1s linear infinite;
+}
+  
+@keyframes giro {
+    0% {
+        transform: rotate(0deg);
+    }
+  
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.car{
+    color: white;
 }

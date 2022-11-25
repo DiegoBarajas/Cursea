@@ -1,0 +1,359 @@
+:root {
+    --morado-1: #B77AAB;
+    --morado-2: #984C8A;
+    --morado-3: #7A296A;
+    --morado-4: #5B0F4D;
+    --morado-5: #3D0031;
+    --morado-6: #ee86d9;
+    --cafe-1: rgba(255, 192, 170, 0.4);
+    --cafe-2: rgba(212, 133, 106, 0.7);
+    --cafe-3: rgba(170, 86, 57, 0.66);
+    --cafe-4: #803015;
+    --cafe-5: #551600;
+    --verde-1: #C7E99B;
+    --verde-2: #98C261;
+    --verde-3: #6E9B34;
+    --verde-4: #4A7413;
+    --verde-5: #2C4E00;
+    --amarillo-1: #D3BB4B;
+    --amarillo-2: #FFF0A9;
+    --amarillo-3: #F7E17B;
+    --amarillo-4: rgba(255, 213, 2, 0.94);
+    --amarillo-5: rgb(226, 189, 41);
+    --azul-1: #669999;
+    --azul-2: #407F7F;
+    --azul-3: #226666;
+    --azul-4: #0D4D4D;
+    --azul-5: #003333;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+    background-color: #4f4f4f;
+}
+
+main {
+    width: 100%;
+    float: left;
+    height: max-content;
+    margin-top: 7.5vh;
+}
+
+h1, h2, h3, p{
+    cursor: default;
+}
+
+.art-info{
+    width: 100%;
+    height: 60vh;
+    float: left;
+}
+
+.sect-info{
+    width: 50%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.p-tipo{
+    font-size: 2vh;
+    margin-left: 4.2vh;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+
+    color: floralwhite;
+}
+
+.h1-nombre{
+    font-size: 8vh;
+    margin-left: 4vh;
+    color: var(--morado-6);
+}
+
+.a-categoria{
+    font-size: 2.5vh;
+    margin-top: .5vh;
+    margin-left: 4.2vh;
+    color: var(--verde-2);
+}
+
+.a-categoria:hover{
+    color: var(--verde-3);
+}
+
+.p-descripcion {
+    margin-top: 4vh;
+    font-size: 2.5vh;
+    margin-left: 4.2vh;
+    margin-right: 2.5vh;
+    text-align: justify;
+
+    color: floralwhite;
+}
+
+.sect-img{
+    width: 45%;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    top: -12vh;
+    right: 2.5vw;
+
+    margin-top: 17.5vh;
+    position: fixed;
+}
+
+.img {
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    width: 92%;
+    border: 5px solid var(--morado-1);
+}
+
+.art-temas{
+    width: 55%;
+    height: fit-content;
+    min-height: 32.5vh;
+    float: left;
+    display: flex;
+}
+
+.sect-temas {
+    width: 85%;
+    min-height: 20vh;
+    height: fit-content;
+    border-radius: 2vh;
+    background-color: var(--morado-2);
+    margin-left: 5vh;
+    margin-top: 1.5vh;
+}
+
+.sect-contenido-p {
+    width: 100%;
+    height: 5vh;
+    float: left;    
+    margin-bottom: 1vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.sect-contenido-padre{
+    width: 100%;
+    height: fit-content;
+    float: left;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sect-contenido {
+    width: 95%;
+    height: 10vh;
+    cursor: pointer;
+    margin-bottom: 0.5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: #CCC;
+}
+
+.sect-contenido:hover{
+    background-color: rgb(182, 182, 182);
+}
+
+.img-contenido{
+    height: 30%;
+    margin-left: 4vh;
+    margin-right: 1.5vh;
+}
+
+.h4-info-curso{
+    font-size: 2.5vh;
+}
+
+.art-duracion{
+    width: 45%;
+    height: 32.5vh;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.h3-nose{
+    font-size: 3vh;
+    margin-right: 3vh;
+    margin-top: 1.5vh;
+    text-align: center;
+    color: floralwhite;
+}
+
+.span{
+    font-size: 3vh;
+    font-weight: normal;
+}
+
+.h3-contenido{
+    font-size: 3vh;
+    margin-left: 3vh;
+    color: white;
+}
+
+.sect-blanco{
+    width: 100%;
+    height: 3vh;
+    float: left;
+}
+
+.sect-fixed{
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+
+    position: fixed;
+    right: 2.5vw;
+    bottom: 4vh;
+}
+
+.sect-h2{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.sect-btns{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.h2-duracion{
+    font-size: 5vh;
+    margin-bottom: .5vh;
+    margin-right: .5vw;
+    color: floralwhite;
+}
+
+.btn-fav{
+    width: 10vh;
+    height: 10vh;
+    background-color: var(--amarillo-4);
+    margin-right: 2vh;
+    border: 0px;
+
+    border-radius: 2.5vh;
+    cursor: pointer;
+}
+
+.btn-fav-no{
+    width: 10vh;
+    height: 10vh;
+    background-color: rgb(184, 184, 184);
+    margin-right: 2vh;
+    border: 0px;
+
+    border-radius: 2.5vh;
+    cursor: pointer;
+}
+
+.btn-start{
+    width: 40vh;
+    height: 10vh;
+    background-color: var(--verde-2);
+    font-size: 3.5vh;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    border-radius: 2.5vh;
+    cursor: pointer;
+}
+
+.img-fav{
+    height: 60%;
+}
+
+.img-start{
+    height: 50%;
+    margin-right: 2vh;
+}
+
+.btn-start:hover{
+    animation-name: btn-start;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    background-color: var(--verde-5);
+
+}
+
+@keyframes btn-start {
+    25% { background-color: var(--verde-4); }
+    50% {  background-color: var(--verde-5)  }
+    75% {  background-color: var(--verde-4);  }
+    100% {  background-color: var(--verde-5);  }
+}
+
+.btn-fav:hover{
+    animation-name: btn-fav;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    background-color: var(--amarillo-5);
+
+}
+
+.btn-fav-no:hover{
+    animation-name: btn-fav-no;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    background-color: rgb(146, 146, 146);
+
+}
+
+@keyframes btn-fav {
+    25% { background-color: var(--amarillo-5); }
+    50% {  background-color: var(--amarillo-4)  }
+    75% {  background-color: var(--amarillo-5);  }
+    100% {  background-color: var(--amarillo-4);  }
+}
+
+@keyframes btn-fav-no {
+    25% { background-color: rgb(146, 146, 146); }
+    50% {  background-color: rgb(184, 184, 184);  }
+    75% {  background-color: rgb(146, 146, 146);  }
+    100% {  background-color: rgb(184, 184, 184)  }
+}
+
+.vacio{
+    width: 100%;
+    height: 7vh;
+    float: left;
+}
+
+.nigga{
+    font-weight: bold;
+}

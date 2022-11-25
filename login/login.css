@@ -68,10 +68,10 @@ input {
 }
 
 .btn-back{
-    left: 2vh;
-    top: 2vh;
+    left: 1vh;
+    top: 1vh;
     position: absolute;
-    width: 10vh;
+    width: 20vh;
     font-size: 2.5vh;
     height: 3.5vh;
     background-color: rgba(255, 255, 255, 0.5);
@@ -189,7 +189,7 @@ input {
 
 .contenedor__login-register section{
     width: 100%;
-    padding: 80px 20px;
+    padding: 60px 20px 20px 20px;
     background: white;
     position: absolute;
     border-radius: 20px;
@@ -312,4 +312,116 @@ input {
     .contenedor__login-register form{
         position: relative;
     }
+}
+
+
+
+.p-olvide{
+    margin-top: 4vh;
+    text-align: center;
+    color: var(--verde-3);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.p-olvide:hover{
+    color: var(--verde-5);
+}
+
+.ventanita{
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(20,20,20,.5);
+
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.form-forget{
+    background-color: white;
+    border-radius: 2vh;
+    width: 40%;
+    height: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.h1-olvide{
+    font-size: 6vh;
+    color: var(--morado-4)
+}
+
+.sect-olv{
+    margin-top: 5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lab-olvide{
+    font-size: 3vh;
+    font-weight: bold;
+    margin-right: .3vw;
+}
+
+.input-text-olv{
+    font-size: 3vh;
+    width: 65%;
+    height: 4vh;
+    border: 0px;
+    background-color: rgb(228, 228, 228);
+    border-radius: .5vh;
+}
+
+.input-submit-olv{
+    margin-top: 12vh;
+    color: white;
+    font-size: 3vh;
+    background-color: var(--azul-3);
+    border: 0px;
+    border-radius: 1vh;
+    width: 25%;
+    height: 15%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cancel{
+    margin-top: 12vh;
+    color: white;
+    font-size: 3vh;
+    background-color: var(--azul-3);
+    border: 0px;
+    border-radius: 1vh;
+    width: 10%;
+    height: 7%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.cancel:hover, .input-submit-olv:hover{
+    background-color: var(--azul-5);
+}
+
+.reset{
+    width: 5vh;
+    height: 5vh;
+    background-color: rgba(0,0,0,0);
+    border: 0px;
+    background-image: url(../img/borrar.jpg);
+    background-position: center;
+    background-size: contain;
+
+    cursor: pointer;
 }

@@ -1,0 +1,131 @@
+:root {
+    --morado-1: #B77AAB;
+    --morado-2: #984C8A;
+    --morado-3: #7A296A;
+    --morado-4: #5B0F4D;
+    --morado-5: #3D0031;
+    --cafe-1: rgba(255, 192, 170, 0.4);
+    --cafe-2: rgba(212, 133, 106, 0.7);
+    --cafe-3: rgba(170, 86, 57, 0.66);
+    --cafe-4: #803015;
+    --cafe-5: #551600;
+    --verde-1: #C7E99B;
+    --verde-2: #98C261;
+    --verde-3: #6E9B34;
+    --verde-4: #4A7413;
+    --verde-5: #2C4E00;
+    --amarillo-1: #D3BB4B;
+    --amarillo-2: #FFF0A9;
+    --amarillo-3: #F7E17B;
+    --amarillo-4: rgba(245, 212, 46, 0.94);
+    --amarillo-5: rgba(143, 121,  15, 0.7);
+    --azul-1: #669999;
+    --azul-2: #407F7F;
+    --azul-3: #226666;
+    --azul-4: #0D4D4D;
+    --azul-5: #003333;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    width: 100%;
+    height: max-content;
+}
+
+main{
+    width: 100%;
+    height: max-content;
+    min-height: 72.5vh;
+    float: left;
+    margin-top: 7.5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1, p{
+    cursor: default;
+}
+
+img{
+    width: 65%;
+    height: max-content;
+    max-height: 50vh;
+    object-fit: contain;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.sect-titulo{
+    width: 100%;
+    height: 7.5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 8vh;
+}
+
+.h1-titulo{
+    font-size: 5vh;
+}
+
+.a-curso{
+    font-size: 3vh;
+    color: var(--cafe-5);
+}
+
+.a-curso:hover{
+    color: var(--cafe-3);
+
+}
+
+.sect-texto{
+    margin-top: 2.5vh;
+    width: 75%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5vh;
+}
+
+.p-texto{
+    font-size: 2.75vh;
+    text-align: justify;
+}
+
+.sect-botones{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vh;
+}
+
+.btn {
+    min-width: 50vh;
+    width: max-content;
+    height: 6vh;
+    font-size: 3vh;
+
+    margin-left: 2vw;
+    margin-right: 2vw;
+    
+    border-radius: 2vh;
+    background-color: var(--verde-2);
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: var(--verde-3);
+}

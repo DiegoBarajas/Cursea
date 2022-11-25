@@ -3,14 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="google-site-verification" content="930DinnjfSR-x7sFB6GU3rd6qf1Fds-GSjQAOP1s8jk" >
         <link rel="stylesheet" href="/general/navbar.css">
         <link rel="stylesheet" href="/general/footer.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Prompt:wght@600&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="/img/icono.png" type="image/x-icon">
+        <link rel="shortcut icon" href="/img/icon.png" type="image/png">
         <?php
             session_start();
+            
             if((!isset($_SESSION['tema'])) || ($_SESSION['tema'] == "claro")){
                 echo '<link rel="stylesheet" href="index.css">';
             }else if($_SESSION['tema'] == "oscuro"){
@@ -20,7 +22,7 @@
 
         <title>Cursea</title>
     </head>
-
+    
     <body>
         <!-- NAV-BAR -->
         <header>
@@ -31,19 +33,9 @@
                 </label>
             </nav>
             <!-- Logo -->
-            <section class="sec-logo">
+            <section class="sec-logo" onclick="window.location.href = '/index.php'">
                 <img src="/img/cursea-logo-blanco.png" alt="Logo" class="img-logo">
             </section>
-            <!-- Espacio en blanco -->
-            <section class="sect-spa1"></section>
-            <!-- Menu Principal -->
-            <nav class="nav-home" onclick="window.location.href='/index.php'">
-                <img src="/img/home-menu.png" alt="home" class="img-navbar-home img-here">
-            </nav>
-            <!-- Buscar -->
-            <nav class="nav-search">
-                <img src="/img/search-menu.png" alt="search" class="img-navbar-search">
-            </nav>
             <!-- Usuario -->
 
             <?php
@@ -68,12 +60,22 @@
 
                     require_once("DB/crud.php");
             ?>
+
+            <!-- Buscar -->
+            <nav class="nav-search" onclick="window.location.href='/busqueda/busqueda.php'">
+                <img src="/img/search-menu.png" alt="search" class="img-navbar-search">
+            </nav>
+            
+            <!-- Menu Principal -->
+            <nav class="nav-home" onclick="window.location.href='/index.php'">
+                <img src="/img/home-menu.png" alt="home" class="img-navbar-home img-here">
+            </nav>
+            
         </header>
 
 
         <!-- Contenido -->
         <main>
-            <section class="sect-spa2"></section>
             <!-- Seccion 1 -->
             <section class="sect-1">
                 <!-- Mensaje bienvenida -->
@@ -83,9 +85,12 @@
                     if( (isset($_SESSION['logged'])) && ($_SESSION['logged'] == "si") ){
                         $nombre = $_SESSION['nombre'];
                         $n = explode(" ", $nombre);
-                        echo '<h1 class="h1-bienvenida titulo">Bienvenido ' . $n[0] . '!</h1>';
+                        echo '<h1 class="h1-bienvenida titulo">Hola ' . $n[0] . '!</h1>';
                     }else{
-                        echo '<h1 class="h1-bienvenida">Bienvenido.';
+                        $msg = ["Hola :)", "Bienvenido", "¿Que tal?", "Hola Mundo", "Ola k ase", "Ola", "Que tranza?", "¿Que rollo con el pollo?"];
+                        $r = rand(0, count($msg)-1);
+
+                        echo '<h1 class="h1-bienvenida titulo">'.$msg[$r].'</h1>';
                     }
                 ?>
                     
@@ -112,7 +117,7 @@
                                 echo '  
                                     <section class="sect-curso-mas-visto" onclick="redirectCursomasVisto'.$i.'()">
                                         <section class="sect-img-mas-visto">
-                                            <img src="img/placeholder.png" alt="img curso" class="img-mas-visto">
+                                            <img src="/curso/img-curso.php?id=' . $row['id'] . '" alt="img curso" class="img-mas-visto">
                                         </section>
                                         <section class="sect-p-mas-visto">
                                             <p class="p-mas-visto contenido">' . $row['nombre'] . '</p>
@@ -141,12 +146,20 @@
                     <!-- Cuadrito Curso (3) -->
                     <?php
                     //Cursos de categoria aleatoria
+                    $cate = ["Informática", "Diseño", "Fotografía"];
+                    $index = rand(0, 2);
+
                     echo '<section class="curso">
                         <section class="sect-nombre-curso">
-                            <h2 class="h2-nombre-curso subtitulo">Categoria</h2>
+                            <h2 class="h2-nombre-curso subtitulo">'.$cate[$index].'</h2>
                         </section>';
 
-                            $sql = "SELECT * FROM curso WHERE categoria = 'Categoria'";
+                        if(rand(0,1)==0){
+                            $sql = "SELECT * FROM curso WHERE categoria = '$cate[$index]'";
+                        }else{
+                            $sql = "SELECT * FROM curso WHERE categoria = '$cate[$index]' ORDER BY id DESC;";
+
+                        }
                             $res = sentencia($sql);
 
                             for($i=0;$i<3;$i++){
@@ -155,16 +168,19 @@
                                 echo '
                                     <section class="sect-curso" onclick="redirectCurso'.$i.'()">
                                         <section class="sect-curso-img">
-                                            <img src="img/placeholder.png" alt="imagen curso" class="img-curso-1">
+                                            <img src="/curso/img-curso.php?id=' . $row['id'] . '" alt="imagen curso" class="img-curso-1">
                                         </section>
-                                        <section class="sect-curso-nombre">
-                                            <h2 class="h2-curso-nombre subtitulo">' . $row['nombre'] .'</h2>
-                                        </section>
-                                        <section class="sect-curso-descripcion">
-                                            <p class="p-descripcion contenido">' . $row['descripcion'] .'</p>
-                                        </section>
-                                        <section class="sect-curso-duracion">
-                                            <p class="p-duracion contenido">Duración: ' . $row['duracion'] .'</p>
+
+                                        <section class="sect-curso-contenido">
+                                            <section class="sect-curso-nombre">
+                                                <h2 class="h2-curso-nombre subtitulo">' . $row['nombre'] .'</h2>
+                                            </section>
+                                            <section class="sect-curso-descripcion">
+                                                <p class="p-descripcion contenido">' . $row['descripcion'] .'</p>
+                                            </section>
+                                            <section class="sect-curso-duracion">
+                                                <p class="p-duracion contenido">Duración: ' . $row['duracion'] .'</p>
+                                            </section>
                                         </section>
                                     </section> 
 
@@ -195,23 +211,26 @@
                 <section class="sect-cate-cuadritos">
 
                 <?php
-                        $categoria = "categoria";
+                        $categoria = ["Fotografía", "Diseño", "Informática", "Matemáticas", "Idiomas"];
+                        $foto = ["fotografia", "diseño", "informatica", "matematicas", "idioma"];
 
-                        echo '
-                        <article class="art-cuadrito" onclick="clickCategoria(form_'.$categoria.')">
-                            <section class="sect-img-curso">
-                                <img src="img/icono.png" alt="imagen curso" class="img-curso">
-                            </section>
-                            <section class="sect-lab-curso">
-                                <label class="lab-nombre-curso contenido">$nombre curso</label>
-                            </section>
-                        </article>
+                        for($i=0; $i<5; $i++){
+                            echo '
+                            <article class="art-cuadrito" onclick="clickCategoria(form_'.$categoria[$i].')">
+                                <section class="sect-img-curso">
+                                    <img src="/img/categoria/'.$foto[$i].'.png" alt="imagen curso" class="img-curso">
+                                </section>
+                                <section class="sect-lab-curso">
+                                    <label class="lab-nombre-curso subtitulo">'.$categoria[$i].'</label>
+                                </section>
+                            </article>
 
 
-                        <form action="/curso/categoria/categoria.php" method="get" id="form_'.$categoria.'">
-                            <input type="hidden" name="categoria" value="'.$categoria.'">
-                        </form>
-                        ';
+                            <form action="/curso/categoria/categoria.php" method="get" id="form_'.$categoria[$i].'">
+                                <input type="hidden" name="categoria" value="'.$categoria[$i].'">
+                            </form>
+                            ';
+                        }
 
                 ?>
 
@@ -223,51 +242,20 @@
 
         </main>
 
-        <!-- Anuncio -->
-        <aside>
-            <section class="anuncio sombra-izq">
-                <section class="anuncio-1">
-                    <h1 class="h1-anuncio">¿Cansado de los anuncios?</h1>
-                </section>
-                <section class="anuncio-2">
-                    <p class="p-anuncio subtitulo">Prueba premium y obten</p>
-                    <p class="p-anuncio subtitulo">recompensas exclusivas</p>
-                </section>
-                <section class="anuncio-3">
-                    <button class="btn-anuncio sombra-izq contenido">Conoce más</button>
-                    <button class="btn-anuncio sombra-der contenido">Probar premium</button>
-                </section>
-            </section>
-        </aside>
-
-        <!-- Footer -->
+        
         <footer>
 
 
             <section class="sect-footer">
-                <section class="sect-text-footer">
-                    <a href="" class="a-footer">Asistencia</a>
-                </section>
-
-                <section class="sect-text-footer">
-                    <a href="" class="a-footer">Politicas de privacidad</a>
-                </section>
-
-                <section class="sect-text-footer">
-                    <a href="" class="a-footer">Contacto</a>
-                </section>
-
-                <section class="sect-text-footer">
-                    <a href="" class="a-footer">Premium</a>
-                </section>
+                <a href="/footer/footer.php#asistencia" class="a-footer">Asistencia</a>
+                <a href="/footer/footer.php#privacidad" class="a-footer">Politicas de privacidad</a>
+                <a href="/footer/footer.php#contacto" class="a-footer">Contacto</a>
             </section>
-
 
             <hr class="hr-footer">
 
-
             <section class="sect-footer-2">
-                <p class="p-footer">© 2022 Cursea. Todos los derechos reservados</p>
+                <p class="p-footer">© 2022 Cursea - El contenido de este sitio web es meramente educativo</p>
             </section>
 
 
@@ -278,22 +266,61 @@
         <div class="container-menu">
             <div class="cont-menu">
                 <nav>
-
+                    <p class="p-navbar">Personal</p>
                     <!-- Slot del menu lateral -->
-                    <section class="sect-nav margen-top" onclick="window.location.href = '';">
+                    <section class="sect-nav" onclick="window.location.href = '/ajustes/cuenta/cuenta.php';">
                         <section class="sect-nav-icon">
-                            <img src="img/icono.png" alt="img" class="sect-nav-img">
+                            <img src="img/user-menu.png" alt="img" class="sect-nav-img">
                         </section>
                         <section class="sect-nav-text">
-                            <p class="nav-p">Hola Mundo</p>
+                            <p class="nav-p">Mi Cuenta</p>
                         </section>
                     </section>
                     <!-- ------------------------ -->
+                    <section class="sect-nav" onclick="window.location.href = '/ajustes/favoritos/favoritos.php';">
+                        <section class="sect-nav-icon">
+                            <img src="/img/curso/fav.png" alt="img" class="sect-nav-img">
+                        </section>
+                        <section class="sect-nav-text">
+                            <p class="nav-p">Cusos favoritos</p>
+                        </section>
+                    </section>
+
+                    <hr>
+                    
+                    <p class="p-navbar">Categorias</p>
+                    <?php
+                        $categoria = ["Fotografía", "Diseño", "Informática", "Matemáticas", "Idiomas"];
+                        $foto = ["fotografia", "diseño", "informatica", "matematicas", "idioma"];
+                        for($i=0;$i<5;$i++){
+                    ?>
+                    <!-- Slot del menu lateral -->
+                    <section class="sect-nav" onclick="window.location.href = '/curso/categoria/categoria.php?categoria=<?php echo$categoria[$i] ?>';">
+                        <section class="sect-nav-icon">
+                            <img src="/img/categoria/<?php echo$foto[$i] ?>.png" alt="img" class="sect-nav-img">
+                        </section>
+                        <section class="sect-nav-text">
+                            <p class="nav-p"><?php echo$categoria[$i] ?></p>
+                        </section>
+                    </section>
+                    <!-- ------------------------ -->
+                    <?php } ?>
 
                 </nav>
-                <label for="btn-menu" class="equis">X</label>
             </div>
         </div>
+
+        <div id="load">
+
+            <div id="contenedor">
+                <div class="contenedor-loader">
+                    <div class="rueda"></div>
+                </div>        
+            </div>
+            <h3 class="titulo car">Cargando contenido...</h3>
+            
+        </div>
+
     </body>
     <script src="index.js"></script>
 </html>

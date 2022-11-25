@@ -7,6 +7,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
 }
 
 .sect-footer{
@@ -14,25 +15,12 @@ footer {
     height: 48%;
     float: left;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end;
-}
-
-.sect-text-footer {
-    width: 20%;
-    height: 70%;
-    float: left;
-    margin-left: .5vh;
-    margin-right: .5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
 }
 
 .a-footer {
     font-family: Helvetica;
-    font-size: 3vh;
     color: white;
     text-decoration: none;
     text-align: center;

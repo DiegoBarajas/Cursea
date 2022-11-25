@@ -2,30 +2,19 @@
 <html lang="es">
     <!--    Iniciar sessions    -->
     <?php 
+
+        require_once("../../DB/crud.php");
+
+
         session_start();
         if((!isset($_SESSION['logged'])) || ($_SESSION['logged'] == "no")){
-            header('Location: ' . "../login.html");
-        }
-
-        // - - - Base de datos - - - //
-        //Variables
-        $server = "localhost";
-        $username = "root";
-        $pass = "";
-        $database = "cursea";
-
-
-        //Conexión
-        $conn = new mysqli($server, $username, $pass, $database);
-
-        if($conn->connect_errno){
-            die ("Conexión fallida: " . $conn->connect_error);
+            header('Location: ' . "../../login/login.php");
         }
 
         //Sentencia SQL
         $id = $_SESSION['id'];
         $sql = "SELECT * FROM usuario WHERE id=$id";
-        $result = $conn->query($sql);
+        $result = sentencia($sql);
 
         //Recorrido DB
         $row = $result->fetch_assoc();
@@ -37,8 +26,6 @@
         $foto = $row['foto'];
         $tema = $_SESSION['tema'];
         
-        //Cerrar conexión
-        $conn->close(); 
     ?>
     <head>
         <meta charset="UTF-8">
@@ -47,8 +34,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Prompt:wght@600&display=swap" rel="stylesheet">
-        <link rel="shortcut icon" href="../../img/icono.png" type="image/x-icon">
-
+        <link rel="shortcut icon" href="/img/icon.png" type="image/png">
         <?php
             if($tema == 'oscuro')
                 echo '<link rel="stylesheet" href="cuenta_osc.css">';
@@ -56,7 +42,7 @@
                 echo '<link rel="stylesheet" href="cuenta.css">';
         ?>
 
-        <title>Cursea - Ajustes</title>
+        <title>Cursea - Información de Cuenta</title>
         <script src="cuenta.js"></script>
     </head>
 
@@ -66,45 +52,46 @@
             <!-- Menu Hamburguesa -->
             <nav class="nav-ham">
                 <label for="btn-menu" class="lab-ham">
-                    <img src="../../img/ham-menu.png" alt="menu" class="img-navbar-ham">
+                    <img src="/img/ham-menu.png" alt="menu" class="img-navbar-ham">
                 </label>
             </nav>
             <!-- Logo -->
-            <section class="sec-logo">
-                <img src="../../img/cursea-logo-blanco.png" alt="Logo" class="img-logo">
+            <section class="sec-logo" onclick="window.location.href = '/index.php'">
+                <img src="/img/cursea-logo-blanco.png" alt="Logo" class="img-logo">
             </section>
-            <!-- Espacio en blanco -->
-            <section class="sect-spa1"></section>
-            <!-- Menu Principal -->
-            <nav class="nav-home" onclick="window.location.href ='../../index.php';">
-                <img src="../../img/home-menu.png" alt="home" class="img-navbar-home">
-            </nav>
-            <!-- Buscar -->
-            <nav class="nav-search">
-                <img src="../../img/search-menu.png" alt="search" class="img-navbar-search">
-            </nav>
             <!-- Usuario -->
 
             <?php
                     if((!isset($_SESSION['logged']) || ($_SESSION['logged'] == "no"))){
                         echo '
                             <nav class="nav-user">
-                                <a href="../../login.php" class="nav-user">
-                                    <img src="../../img/user-menu.png" alt="user" class="img-navbar-user">
+                                <a href="/login/login.php" class="nav-user">
+                                    <img src="/img/user-menu.png" alt="user" class="img-navbar-user">
                                 </a>
                             </nav>
                         ';
                     }else{
                         echo '
                             <nav class="nav-user">
-                                <a href="../ajustes.php" class="nav-user">
+                                <a href="/ajustes/ajustes.php" class="nav-user">
                                     <img src="/general/imagen_usuario.php" alt="user" class="img-navbar-user">
                                 </a>
                             </nav>
                         ';
                     }
+
+
             ?>
 
+            <!-- Buscar -->
+            <nav class="nav-search" onclick="window.location.href='/busqueda/busqueda.php'">
+                <img src="/img/search-menu.png" alt="search" class="img-navbar-search">
+            </nav>
+            
+            <!-- Menu Principal -->
+            <nav class="nav-home" onclick="window.location.href='/index.php'">
+                <img src="/img/home-menu.png" alt="home" class="img-navbar-home">
+            </nav>
             
         </header>
         
@@ -119,34 +106,34 @@
             <section class="sect-contenido">
                 <section class="sect-blanco-cont"></section>
                 <article class="art">
-                    <label class="lab subtitulo"><b>Foto de perfil: </b></label>
-                    <img src="/general/imagen_usuario.php" alt="Imagen de Usuario" class="img-perfil">
+                    <label class="lab subtitulo"  onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';"><b>Foto de perfil: </b></label>
+                    <img src="/general/imagen_usuario.php" alt="Imagen de Usuario" class="img-perfil" onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';">
                 </article>
                 <article class="art">
-                    <lab class="lab subtitulo"><b>Nombre: </b></lab>
+                    <label class="lab subtitulo"  onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';"><b>Nombre: </b></label>
                     <?php echo '<label class="lab-cont contenido">'.$nombre.'</label>'; ?>
                 </article>
                 <article class="art">
-                    <lab class="lab subtitulo"><b>Correo: </b></lab>
+                    <label class="lab subtitulo"  onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';"><b>Correo: </b></label>
                     <?php echo '<label class="lab-cont contenido">'.$email.'</label>'; ?>
 
                 </article>
                 <article class="art">
-                    <lab class="lab subtitulo"><b>Contraseña: </b></lab>
+                    <label class="lab subtitulo"  onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';"><b>Contraseña: </b></label>
                     <?php
                         $lenght= strlen($password);
                         $password_dec = "";
                         for( $i=0;$i<$lenght;$i++){
                             $password_dec .= "*";
                         }
-                        echo '<label class="lab-cont contenido">' . $password_dec . '</label>'; 
+                        echo '<label class="lab-cont contenido"  onclick="window.location.href = \'cambiar_datos/cambiar_datos.php\';">' . $password_dec . '</label>'; 
                      ?>
                 </article>
                 <article class="art">
-                    <button class="btn" onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';">Cambiar Datos</button>
+                    <button id="btn-perfil" class="btn" onclick="window.location.href = 'cambiar_datos/cambiar_datos.php';">Cambiar Datos</button>
                 </article>
                 <article class="art">
-                    <lab class="lab subtitulo"><b>Tema: </b></lab>
+                    <label class="lab subtitulo" for="switch-label" onclick="switchBtn();"><b>Tema: </b></label>
 
                     <div class="switch-button">
                         <!-- Checkbox -->
@@ -185,25 +172,112 @@
         </script>
 
         <!-- Menu Lateral -->
+
         <input type="checkbox"  id="btn-menu" class="hide">
+
         <div class="container-menu">
+
             <div class="cont-menu">
+
                 <nav>
 
+                    <p class="p-navbar">Personal</p>
+
                     <!-- Slot del menu lateral -->
-                    <section class="sect-nav margen-top" onclick="window.location.href = '';">
+
+                    <section class="sect-nav" onclick="window.location.href = '/ajustes/cuenta/cuenta.php';">
+
                         <section class="sect-nav-icon">
-                            <img src="../../img/icono.png" alt="img" class="sect-nav-img">
+
+                            <img src="/img/user-menu.png" alt="img" class="sect-nav-img">
+
                         </section>
+
                         <section class="sect-nav-text">
-                            <p class="nav-p">Hola Mundo</p>
+
+                            <p class="nav-p">Mi Cuenta</p>
+
                         </section>
+
                     </section>
+
                     <!-- ------------------------ -->
 
+                    <section class="sect-nav" onclick="window.location.href = '/ajustes/favoritos/favoritos.php';">
+
+                        <section class="sect-nav-icon">
+
+                            <img src="/img/curso/fav.png" alt="img" class="sect-nav-img">
+
+                        </section>
+
+                        <section class="sect-nav-text">
+
+                            <p class="nav-p">Cusos favoritos</p>
+
+                        </section>
+
+                    </section>
+
+
+
+                    <hr>
+
+                    
+
+                    <p class="p-navbar">Categorias</p>
+
+                    <?php
+
+                        $categoria = ["Fotografía", "Diseño", "Informática", "Matemáticas", "Idiomas"];
+
+                        $foto = ["fotografia", "diseño", "informatica", "matematicas", "idioma"];
+
+                        for($i=0;$i<5;$i++){
+
+                    ?>
+
+                    <!-- Slot del menu lateral -->
+
+                    <section class="sect-nav" onclick="window.location.href = '/curso/categoria/categoria.php?categoria=<?php echo$categoria[$i] ?>';">
+
+                        <section class="sect-nav-icon">
+
+                            <img src="/img/categoria/<?php echo$foto[$i] ?>.png" alt="img" class="sect-nav-img">
+
+                        </section>
+
+                        <section class="sect-nav-text">
+
+                            <p class="nav-p"><?php echo$categoria[$i] ?></p>
+
+                        </section>
+
+                    </section>
+
+                    <!-- ------------------------ -->
+
+                    <?php } ?>
+
+
+
                 </nav>
-                <label for="btn-menu" class="equis">X</label>
+
             </div>
+
         </div>
+
+        <div id="load">
+
+            <div id="contenedor">
+                <div class="contenedor-loader">
+                    <div class="rueda"></div>
+                </div>        
+            </div>
+            <h3 class="titulo car">Cargando contenido...</h3>
+            
+        </div>
+
     </body>
+    <script src="/general/load.js"></script>
 </html>

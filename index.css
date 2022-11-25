@@ -31,27 +31,32 @@
     padding: 0px;
 }
 
-html, body {
+html {
     width: 100%;
     height: 100%;
 }
 
+body{
+    width: 100%;
+    height: max-content;
+}
+
 main {
     width: 100%;
-    height: 250vh;
+    height: max-content;
     float: left;
     margin-top: 7.5vh;
+
 }
 
 img {
     max-height: 95%;
 }
 
-.sect-spa2{
-    width: 100%;
-    height: 1%;
-    float: left;
+h1, h2, h3, h4, h5, h6, p{
+    cursor: default;
 }
+
 
 .sect-1{
     width: 100%;
@@ -64,7 +69,8 @@ img {
 
 .sect-bienvenida {
     width: 100%;
-    height: 10vh;
+    min-height: 10vh;
+    height: max-content;
     float: left;
     display: flex;
     align-items: center;
@@ -93,6 +99,7 @@ img {
 }
 
 .h3-mas-vistos {
+    margin-top: 1vh;
     font-size: 4vh;
     margin-left: 4vh;
     color: var(--azul-1);
@@ -105,7 +112,7 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+
 }
 
 .sect-curso-mas-visto {
@@ -113,6 +120,9 @@ img {
     height: 100%;
     margin-left: 2vh;
     margin-right: 2vh;
+
+    cursor: pointer;
+
 }
 
 .sect-curso-mas-visto:hover {
@@ -156,6 +166,8 @@ img {
 .img-mas-visto {
     margin-top: 1vh;
     width: 90%;
+    height: 90%;
+    object-fit: contain;
 }
 
 .sect-p-mas-visto {
@@ -165,11 +177,13 @@ img {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    overflow: hidden;
+    margin-bottom: 1.5vh;
 }
 
 .p-mas-visto {
     margin-top: 1vh;
-    font-size: 3vh;
+    text-align: center;
 }
 
 .art-puntitos {
@@ -216,49 +230,20 @@ img {
 
 .sect-curso {
     width: 90%;
-    height: 29%;
+    min-height: 29%;
+    height: fit-content;
     background-color: white;
-    border-radius: 1vw;
-    margin-bottom: 1vw;
+    border-radius: 1vh;
+    margin-bottom: 1vh;
     cursor: pointer;
 }
 
 .sect-curso:hover {
-    width: 93%;
-    height: 31%;
-    animation-name: sect-curso;
-    animation-duration: 250ms;
-    animation-timing-function: ease-out;
-}
-
-@keyframes sect-curso {
-    from{
-        width: 90%;
-        height: 29%;
-    }to{
-        width: 93%;
-        height: 31%;
-    }
-}
-
-.sect-curso:not(:hover) {
-    animation-name: not-sect-curso;
-    animation-duration: 200ms;
-    animation-timing-function: ease-out;
-}
-
-@keyframes not-sect-curso {
-    from{
-        width: 93%;
-        height: 31%;
-    }to{
-        width: 90%;
-        height: 29%;
-    }
+    background-color: rgb(224, 224, 224);
 }
 
 .sect-curso-img {
-    width: 33%;
+    width: 33.3333%;
     height: 100%;
     float: left;
     display: flex;
@@ -270,23 +255,36 @@ img {
     width: 95%;
 }
 
+.sect-curso-contenido{
+    width: 66.6666%;
+    height: 100%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .sect-curso-nombre {
-    width: 67%;
-    height: 20%;
+    width: 100%;
+    height: 25%;
     float: left;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end
+    align-items: flex-start;
+    overflow: hidden;
 }
 
 .h2-curso-nombre {
     font-size: 4vh;
     margin-left: 1vh;
+    margin-top: 1vh;
+    overflow: hidden;
     color: var(--morado-3);
 }
 
 .sect-curso-descripcion {
-    width: 67%;
+    width: 100%;
     height: 60%;
     float: left;
     display: flex;
@@ -299,11 +297,15 @@ img {
     margin-left: 1vh;
     margin-right: 2vh;
     margin-top: 1vh;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .sect-curso-duracion {
-    width: 67%;
-    height: 20%;
+    width: 100%;
+    height: 15%;
     float: left;
     display: flex;
     justify-content: flex-end;
@@ -311,14 +313,15 @@ img {
 }
 
 .p-duracion {
-    font-size: 3.5vh;
+    font-size: 3vh;
     margin-right: 4vh;
     color: var(--cafe-5)
 }
 
 .sect-3 {
+    margin-top: 8vh;
     width: 100%;
-    height: 24%;
+    height: max-content;
     float: left;
 }
 
@@ -329,6 +332,7 @@ img {
     display: flex;
     justify-content: baseline;
     align-items: center;
+    margin-bottom: 1vh;
 }
 
 .h2-categorias {
@@ -339,21 +343,27 @@ img {
 
 .sect-cate-cuadritos {
     width: 100%;
-    height: 80%;
+    height: fit-content;
     float: left;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin-bottom: 3vh;
 }
 
 .art-cuadrito {
     width: 18%;
-    height: 70%;
+    height: max-content;
     margin-left: .5vh;
     margin-right: .5vh;
     background-color: var(--morado-2);
     border-radius: 2vh;    
     cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .art-cuadrito:hover {
@@ -387,15 +397,17 @@ img {
 }
 
 .sect-img-curso {
-    width: 100%;
-    height: 80%;
+    width: 75%;
     float: left;
 }
 
 .img-curso {
     height: 100%;
+    width: 100%;
+    object-fit: contain;
     display: block;
     margin: auto;
+    margin-top: 1vh;
 }
 
 .sect-lab-curso {
@@ -404,11 +416,15 @@ img {
     float: left;
     display: flex;
     justify-content: center;
+    margin-top: 2vh;
 }
 
 .lab-nombre-curso {
     text-align: center;
-    font-size: 3vh;
+    color: white;
+    overflow: hidden;
+    font-size: 15px;
+    margin-bottom: 1vh;
 }
 
 aside{
@@ -421,7 +437,7 @@ aside{
 }
 
 .anuncio {
-    width: 75%;
+    width: 55%;
     height: 95%;
     background-color: var(--amarillo-5);
     border-radius: 3.5vh;
@@ -456,19 +472,21 @@ aside{
 }
 
 .h1-anuncio {
-    font-size: 7vh;
+    font-size: 6vh;
     color: white;
 
 }
 
 .p-anuncio {
-    font-size: 6vh;
+    font-size: 4vh;
     color: white;
 }
 
 .btn-anuncio {
-    width: 20%;
-    height: 40%;
+    width: max-content;
+    min-width: 20%;
+    height: max-content;
+    min-height: 40%;
     margin-left: 3vh;
     margin-right: 3vh;
     color: white;
@@ -483,9 +501,9 @@ aside{
     animation-name: btn-anuncio;
     animation-duration: 300ms;
     animation-timing-function: ease-out;
-    width: 23%;
+    width: 25%;
     height: 45%;
-    font-size: 4vh;
+    font-size: 3vh;
 }
 
 @keyframes btn-anuncio {
@@ -495,9 +513,9 @@ aside{
         font-size: 3vh;
     
     }to{
-        width: 23%;
+        width: 25%;
         height: 45%;
-        font-size: 4vh;
+        font-size: 3vh;
     }
 }
 
@@ -509,9 +527,9 @@ aside{
 
 @keyframes not-btn-anuncio {
     from{
-        width: 23%;
+        width: 25%;
         height: 45%;
-        font-size: 4vh;
+        font-size: 3vh;
     }to{
         width: 20%;
         height: 40%;
@@ -519,7 +537,6 @@ aside{
     
     }
 }
-
 
 .sombra-izq {
     box-shadow: -1vh 1vh rgba(0,0,0,.5);

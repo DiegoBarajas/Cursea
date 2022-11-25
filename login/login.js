@@ -263,4 +263,65 @@ function validarEmail(valor) {
     } else {
         return false;
     }
-  }
+}
+
+function teclas(event){
+    var va = event.keyCode;
+    if(va == 13){
+        login();
+    }
+}
+
+function tabular(event){
+    var tecla = event.keyCode;
+    if(tecla == 13){
+        document.getElementById("pass-log").focus();
+    }
+}
+
+function tabular1(event){
+    var tecla = event.keyCode;
+    if(tecla == 13){
+        document.getElementById("email-sign").focus();
+    }
+}
+
+function tabular2(event){
+    var tecla = event.keyCode;
+    if(tecla == 13){
+        document.getElementById("pass-sign").focus();
+    }
+}
+
+function tabular3(event){
+    var tecla = event.keyCode;
+    if(tecla == 13){
+        document.getElementById("con-pass-sign").focus();
+    }
+}
+
+function teclas2(event){
+    var va = event.keyCode;
+    if(va == 13){
+        signin();
+    }
+}
+
+function olvidePassword(){
+    var ventanita = document.getElementById("ventanita");
+    llenarInput();
+
+    ventanita.style.visibility = "visible";
+}
+
+function olvidePasswordC(){
+    var ventanita = document.getElementById("ventanita");
+
+    ventanita.style.visibility = "hidden";
+}
+
+function llenarInput(){
+    var correo = document.getElementById("email-log").value;
+
+    document.getElementById("input-olvide").value = correo;
+}

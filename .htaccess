@@ -1,0 +1,13 @@
+php_value display_errors Off
+php_value mbstring.http_input auto
+php_value date.timezone America/Mexico_City
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.cursea.ga/$1 [R,L]
+
+ErrorDocument 400 http://cursea.ga/error/error400.html
+ErrorDocument 401 http://cursea.ga/error/error401.html
+ErrorDocument 403 http://cursea.ga/error/error403.html
+ErrorDocument 404 http://cursea.ga/error/error404.html
+ErrorDocument 503 http://cursea.ga/error/error503.html

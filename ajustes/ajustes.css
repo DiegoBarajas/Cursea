@@ -38,14 +38,20 @@ html, body {
 
 main{
     width: 100%;
-    height: 92.5vh;
+    min-height: 92.5vh;
+    height: fit-content;
     float: left;
     margin-top: 7.5vh;
 }
 
+h1{
+    cursor: default;
+}
+
 .art-titulo {
     width: 100%;
-    height: 20vh;
+    min-height: 20vh;
+    height: max-content;
     float: left;
     display: flex;
     align-items: flex-start;
@@ -74,6 +80,30 @@ main{
     height: 20%;
     float: left;
     cursor: pointer;
+}
+
+.art-datos-admin{
+    width: 100%;
+    height: 20%;
+    float: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.art-datos-admin:hover{
+    animation-name: art-datos;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in-out;
+
+    transform: translateY(-2vh);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.art-datos-admin:hover h2{
+    color: var(--morado-5);
 }
 
 .art-datos:hover{
@@ -112,7 +142,7 @@ main{
 }
 
 .sect-icono {
-    width: 10%;
+    width: 20%;
     height: 100%;
     float: left;
     display: flex;
@@ -121,7 +151,7 @@ main{
 }
 
 .sect-datos {
-    width: 80%;
+    width: 70%;
     height: 100%;
     float: left;
     display: flex;
@@ -160,4 +190,8 @@ main{
 .img-flecha {
     height: 30%;
     opacity: .5;
+}
+
+.h2-admin{
+    text-align: center;
 }
